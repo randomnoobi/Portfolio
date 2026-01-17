@@ -1,11 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Optional: Adding a clean font like Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>It works 🎉</h1>
-  <p>This site is live on my custom domain.</p>
+
+    <main class="portfolio-grid">
+        <!-- Project 1 (Large) -->
+        <div class="project-item reveal">
+            <div class="image-container">
+                <img src="assets/project1.jpg" alt="Project 1">
+            </div>
+            <div class="project-info">
+                <span>Coming soon...</span>
+            </div>
+        </div>
+
+        <!-- Project 2 (Large) -->
+        <div class="project-item reveal">
+            <div class="image-container">
+                <img src="assets/project2.jpg" alt="Project 2">
+            </div>
+            <div class="project-info">
+                <span>New brand campaign storytelling for 2025</span>
+            </div>
+        </div>
+
+        <!-- Add more project-items as needed -->
+    </main>
+
+    <footer class="footer">
+        <div class="footer-column">
+            <h1>Your Name</h1>
+            <p>Design student and creator focused on clarity, strategic storytelling, and intentional collaboration.</p>
+        </div>
+
+        <div class="footer-column">
+            <h3>Services</h3>
+            <ul>
+                <li>Visual Identity</li>
+                <li>Branding</li>
+                <li>Web Design</li>
+                <li>Photography</li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>Contact</h3>
+            <a href="mailto:your@email.com">→ Email</a><br>
+            <a href="#">→ Behance</a><br>
+            <a href="#">→ LinkedIn</a>
+        </div>
+
+        <div class="footer-column right-align">
+            <p id="current-time">City, Date, Time</p>
+            <div class="social-icon">
+                <!-- Simple SVG or text for Instagram icon -->
+                <span>(O)</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
