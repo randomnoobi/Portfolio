@@ -1,25 +1,26 @@
-// Scroll Reveal Effect
+// 1. Scroll Reveal Animation
 const scrollReveal = function() {
     const reveals = document.querySelectorAll(".reveal");
-    for (let i = 0; i < reveals.length; i++) {
-        let windowHeight = window.innerHeight;
-        let elementTop = reveals[i].getBoundingClientRect().top;
-        let elementVisible = 150;
+    reveals.forEach(el => {
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
+        const elementVisible = 100;
         if (elementTop < windowHeight - elementVisible) {
-            reveals[i].classList.add("active");
+            el.classList.add("active");
         }
-    }
+    });
 };
 
 window.addEventListener("scroll", scrollReveal);
 scrollReveal(); // Run once on load
 
-// Real-time Clock for Sam Wang's Portfolio
+// 2. Real-time Los Angeles Clock
 function updateTime() {
     const timeDisplay = document.getElementById("current-time");
-    const now = new Date();
-    
+    if (!timeDisplay) return;
+
     const options = { 
+        timeZone: 'America/Los_Angeles',
         hour: '2-digit', 
         minute: '2-digit', 
         hour12: true, 
@@ -27,9 +28,9 @@ function updateTime() {
         day: 'numeric' 
     };
     
-    // Change "Los Angeles" to your preferred city
-    const timeString = "Los Angeles " + now.toLocaleString('en-US', options);
-    timeDisplay.textContent = timeString;
+    const now = new Date();
+    const timeString = now.toLocaleString('en-US', options);
+    timeDisplay.textContent = "Los Angeles " + timeString;
 }
 
 setInterval(updateTime, 1000);
