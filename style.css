@@ -120,11 +120,17 @@ body {
 .detail-description { font-size: 20px; line-height: 1.6; margin-bottom: 60px; }
 .detail-image { width: 100%; margin-bottom: 20px; display: block; }
 
-/* --- Project Page Layout --- */
-.project-page { padding: 0; }
+/* --- Project Detail Page Styling --- */
 
+/* Ensures the body doesn't have weird spacing on the project page */
+.project-page {
+    padding: 0;
+    margin: 0;
+}
+
+/* The "Back" Button Overlay */
 .project-nav {
-    padding: 30px 2vw;
+    padding: 30px 4vw;
     position: absolute;
     top: 0;
     z-index: 100;
@@ -132,60 +138,104 @@ body {
 
 .project-nav a {
     text-decoration: none;
-    color: #fff;
-    background: rgba(0,0,0,0.3);
+    color: #000;
+    background: rgba(255, 255, 255, 0.8);
     padding: 10px 20px;
-    border-radius: 30px;
+    border-radius: 40px;
     font-size: 14px;
+    font-weight: 500;
     backdrop-filter: blur(10px);
+    border: 1px solid rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
 }
 
-/* Giant Hero Image */
-.project-hero {
-    width: 100%;
-    height: 100vh; /* Full screen height */
+.project-nav a:hover {
+    background: #000;
+    color: #fff;
+}
+
+/* Placeholder boxes: Gray background if image is missing */
+.placeholder {
+    background-color: #f2f2f2; /* Light gray box color */
+    position: relative;
     overflow: hidden;
 }
 
-.project-hero img {
+/* Giant Hero Image styling */
+.project-hero {
+    width: 100%;
+    height: 85vh; /* 85% of screen height */
+}
+
+/* Makes images fill their gray boxes properly */
+.placeholder img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
 }
 
 /* Intro Text Area */
 .project-intro {
-    padding: 120px 2vw;
+    padding: 100px 4vw;
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 80px;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 60px;
+    max-width: 1400px;
 }
 
-.intro-text h1 { font-size: clamp(40px, 6vw, 72px); margin-bottom: 30px; font-weight: 500; }
-.intro-text .description { font-size: 20px; line-height: 1.6; max-width: 650px; color: #333; }
+.intro-text h1 {
+    font-size: clamp(48px, 6vw, 80px);
+    line-height: 1.1;
+    margin-bottom: 30px;
+}
 
-/* The Image Gallery */
+.intro-text .description {
+    font-size: 20px;
+    line-height: 1.5;
+    color: #333;
+}
+
+.intro-meta h3 {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    color: #888;
+}
+
+.meta-item {
+    margin-bottom: 30px;
+}
+
+/* Image Gallery Layout */
 .project-gallery {
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Space between rows of images */
-    padding-bottom: 100px;
+    gap: 20px;
+    padding: 0 20px 100px 20px; /* Space on sides */
 }
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Two side-by-side */
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
 
-.gallery-grid img, .gallery-item img {
-    width: 100%;
-    display: block;
+/* Set height for side-by-side placeholder boxes */
+.grid-item {
+    aspect-ratio: 1 / 1; /* Makes them square */
 }
 
-/* Responsive for Mobile */
-@media (max-width: 768px) {
-    .project-intro { grid-template-columns: 1fr; }
+/* Set height for full-width placeholder boxes */
+.full-width {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Professional wide look */
+}
+
+/* Responsive fixes */
+@media (max-width: 800px) {
+    .project-intro { grid-template-columns: 1fr; padding: 60px 4vw; }
     .gallery-grid { grid-template-columns: 1fr; }
     .project-hero { height: 60vh; }
 }
