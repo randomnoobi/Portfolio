@@ -3,72 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sam Wang | Portfolio</title>
+    <title>Project One | Sam Wang</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Clean font for a professional look -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="project-page">
 
-    <main class="portfolio-grid">
-        <!-- PROJECT 1 START -->
-        <a href="project-1.html" class="project-link">
-            <div class="project-item reveal">
-                <div class="image-container">
-                    <img src="assets/project1-cover.jpg" alt="Project 1">
-                </div>
-                <div class="project-info">
-                    <span>Coming soon — Brand Identity 2025</span>
-                </div>
-            </div>
-        </a>
-        <!-- PROJECT 1 END -->
+    <nav class="project-nav">
+        <a href="index.html">← Back to Projects</a>
+    </nav>
 
-        <!-- PROJECT 2 START -->
-        <a href="project-1.html" class="project-link">
-            <div class="project-item reveal">
-                <div class="image-container">
-                    <img src="assets/project2-cover.jpg" alt="Project 2">
-                </div>
-                <div class="project-info">
-                    <span>New brand campaign storytelling</span>
-                </div>
+    <!-- PHOTO 1: THE GIANT HERO -->
+    <header class="project-hero placeholder">
+        <img src="assets/project-1/hero.jpg" alt="Hero Image">
+    </header>
+
+    <!-- TEXT SECTION -->
+    <section class="project-intro reveal">
+        <div class="intro-text">
+            <h1>Project Title</h1>
+            <p class="description">
+                Explain your project here. Talk about your goal and your creative process. 
+                Even without images yet, this area will stay structured and clean.
+            </p>
+        </div>
+        <div class="intro-meta">
+            <div class="meta-item">
+                <h3>Role</h3>
+                <p>Lead Designer</p>
             </div>
-        </a>
-        <!-- PROJECT 2 END -->
+            <div class="meta-item">
+                <h3>Year</h3>
+                <p>2025</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <main class="project-gallery">
+        
+        <!-- PHOTOS 2 & 3: TWO COLUMN GRID -->
+        <div class="gallery-grid">
+            <div class="grid-item placeholder">
+                <img src="assets/project-1/grid-left.jpg" alt="Gallery 1">
+            </div>
+            <div class="grid-item placeholder">
+                <img src="assets/project-1/grid-right.jpg" alt="Gallery 2">
+            </div>
+        </div>
+
+        <!-- PHOTO 4: LARGE HORIZONTAL IMAGE -->
+        <div class="gallery-item full-width placeholder reveal">
+            <img src="assets/project-1/wide-shot.jpg" alt="Full Width View">
+        </div>
+
+        <!-- PHOTO 5: OPTIONAL SECOND LARGE IMAGE -->
+        <div class="gallery-item full-width placeholder reveal">
+            <img src="assets/project-1/details.jpg" alt="Process View">
+        </div>
+
     </main>
 
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-column">
             <h1>Sam Wang</h1>
-            <p>Creative focused on clarity, strategic storytelling, and intentional collaboration. Building visual systems that bridge the gap between design and technology.</p>
+            <p>Creative focused on clarity and intentional collaboration.</p>
         </div>
-
-        <div class="footer-column">
-            <h3>Services</h3>
-            <ul>
-                <li>Visual Identity</li>
-                <li>Branding</li>
-                <li>Campaign</li>
-                <li>Design System</li>
-                <li>Website Design</li>
-            </ul>
-        </div>
-
         <div class="footer-column">
             <h3>Contact</h3>
             <div class="contact-links">
                 <a href="mailto:samwang2028@gmail.com">→ Email</a>
-                <br> <!-- Extra return as requested -->
+                <br>
                 <a href="tel:+13106780618">→ +1 310 678 0618</a>
             </div>
         </div>
-
         <div class="footer-column right-align">
             <p id="current-time">Los Angeles, Loading...</p>
-            <div class="social-icon">
-                <a href="https://instagram.com" target="_blank" style="text-decoration: none; color: black;">(O)</a>
-            </div>
         </div>
     </footer>
 
