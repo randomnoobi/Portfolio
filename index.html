@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sam Wang | Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Clean font for a professional look -->
+    <!-- Premium minimalist font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -14,8 +14,15 @@
         <!-- PROJECT 1 START -->
         <a href="project-1.html" class="project-link">
             <div class="project-item reveal">
-                <div class="image-container">
-                    <img src="placeholder.jpg" alt="Project 1">
+                <!-- video-container triggers the hover logic in script.js -->
+                <div class="image-container video-container placeholder">
+                    <!-- 
+                         poster: The static image shown before hover
+                         src: The video file that plays on hover 
+                    -->
+                    <video class="hover-video" muted loop playsinline poster="placeholder.jpg">
+                        <source src="assets/project1-preview.mp4" type="video/mp4">
+                    </video>
                 </div>
                 <div class="project-info">
                     <span>Coming soon — Brand Identity 2025</span>
@@ -27,8 +34,10 @@
         <!-- PROJECT 2 START -->
         <a href="project-1.html" class="project-link">
             <div class="project-item reveal">
-                <div class="image-container">
-                    <img src="assets/project2-cover.jpg" alt="Project 2">
+                <div class="image-container video-container placeholder">
+                    <video class="hover-video" muted loop playsinline poster="assets/project2-cover.jpg">
+                        <source src="assets/project2-preview.mp4" type="video/mp4">
+                    </video>
                 </div>
                 <div class="project-info">
                     <span>New brand campaign storytelling</span>
@@ -59,7 +68,7 @@
             <h3>Contact</h3>
             <div class="contact-links">
                 <a href="mailto:samwang2028@gmail.com">→ Email</a>
-                <br> <!-- Extra return as requested -->
+                <br> <!-- Requested return after email -->
                 <a href="tel:+13106780618">→ +1 310 678 0618</a>
             </div>
         </div>
@@ -67,11 +76,15 @@
         <div class="footer-column right-align">
             <p id="current-time">Los Angeles, Loading...</p>
             <div class="social-icon">
-                <a href="https://instagram.com" target="_blank" style="text-decoration: none; color: black;">(O)</a>
+                <a href="https://instagram.com" target="_blank" style="text-decoration: none; color: black;">
+                    <!-- Simple SVG Instagram Icon -->
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </a>
             </div>
         </div>
     </footer>
 
+    <!-- Essential for animations, video hover, and clock -->
     <script src="script.js"></script>
 </body>
 </html>
