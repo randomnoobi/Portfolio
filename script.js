@@ -76,7 +76,7 @@ videoItems.forEach(item => {
     const ctx = canvas.getContext("2d");
 
     // --- Config ---
-    const N = 20;              // number of nodes
+    const N = 7;              // number of nodes
     const LINK = 30;           // fixed distance between nodes (px)
     const HEAD_RADIUS = 8;     // node size
     const TAIL_RADIUS = 3;
