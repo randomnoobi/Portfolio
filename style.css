@@ -239,3 +239,19 @@ body {
     .gallery-grid { grid-template-columns: 1fr; }
     .project-hero { height: 60vh; }
 }
+
+#lizard-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Sits behind your projects */
+    background-color: #000; /* Dark background as requested */
+    pointer-events: none; /* Allows you to click links "through" the lizard */
+}
+
+/* Ensure the rest of your site is transparent enough to see the lizard */
+body {
+    background-color: transparent; 
+}
