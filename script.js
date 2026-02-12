@@ -1,4 +1,7 @@
-// 1. Scroll Reveal Animation
+/**
+ * 1. SCROLL REVEAL ANIMATION
+ * Makes projects fade in as you scroll down
+ */
 const scrollReveal = function() {
     const reveals = document.querySelectorAll(".reveal");
     reveals.forEach(el => {
@@ -12,9 +15,12 @@ const scrollReveal = function() {
 };
 
 window.addEventListener("scroll", scrollReveal);
-scrollReveal(); // Run once on load
+scrollReveal(); // Run once on load to show items already in view
 
-// 2. Real-time Los Angeles Clock
+
+/**
+ * 2. REAL-TIME LOS ANGELES CLOCK
+ */
 function updateTime() {
     const timeDisplay = document.getElementById("current-time");
     if (!timeDisplay) return;
@@ -32,24 +38,49 @@ function updateTime() {
     const timeString = now.toLocaleString('en-US', options);
     timeDisplay.textContent = "Los Angeles " + timeString;
 }
-
 setInterval(updateTime, 1000);
 updateTime();
 
+
 /**
- * SMALL FLOATING LIZARD OBJECT
+ * 3. VIDEO HOVER LOGIC (YouTube Style)
+ * Plays video on hover, resets to start on mouse leave
+ */
+const videoItems = document.querySelectorAll('.video-container');
+
+videoItems.forEach(item => {
+    const video = item.querySelector('.hover-video');
+    if (!video) return;
+
+    item.addEventListener('mouseenter', () => {
+        const playPromise = video.play();
+        if (playPromise !== undefined) {
+            playPromise.catch(() => { /* Auto-play prevented */ });
+        }
+    });
+
+    item.addEventListener('mouseleave', () => {
+        video.pause();
+        video.currentTime = 0; // Resets to beginning
+    });
+});
+
+
+/**
+ * 4. SMALL FLOATING LIZARD (Black)
+ * A discrete procedural following system
  */
 const canvas = document.getElementById('lizard-canvas');
 const ctx = canvas.getContext('2d');
 
-// --- SETTINGS FOR A DISCRETE, SMALL LIZARD ---
-const numNodes = 9;        // Fewer nodes = shorter body
-const segmentLength = 10;   // Shorter distance = smaller size
-const headRadius = 5;       // Tiny head
-const tailRadius = 1;       // Tiny tail
-const lizardColor = '#000000'; // Matches your site text color
+// Settings for a small, subtle lizard
+const numNodes = 18;        
+const segmentLength = 10;   
+const headRadius = 4;       
+const tailRadius = 1;       
+const lizardColor = '#000000'; // Black to match your text
 
-let mouse = { x: -100, y: -100 }; // Start off-screen
+let mouse = { x: -100, y: -100 };
 let nodes = [];
 
 // Initialize nodes
@@ -69,49 +100,29 @@ window.addEventListener('resize', () => {
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-function update() {
-    // 1. Head follows cursor
+function updateLizard() {
     nodes[0].x = mouse.x;
     nodes[0].y = mouse.y;
 
-    // 2. Body segments drag behind
     for (let i = 1; i < numNodes; i++) {
         const target = nodes[i - 1];
         const current = nodes[i];
-
         const dx = target.x - current.x;
         const dy = target.y - current.y;
         const angle = Math.atan2(dy, dx);
-
-        // This keeps the joints strictly connected
         current.x = target.x - Math.cos(angle) * segmentLength;
         current.y = target.y - Math.sin(angle) * segmentLength;
     }
 }
 
-function draw() {
+function drawLizard() {
+    // This MUST be clearRect to keep the background transparent
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    // Don't draw if the mouse hasn't entered the screen yet
     if (mouse.x < 0) return;
 
-    // Draw the "Skeleton" Line
-    ctx.beginPath();
-    ctx.strokeStyle = lizardColor;
-    ctx.lineWidth = 1;
-    ctx.globalAlpha = 0.5; // Make the line slightly transparent
-    ctx.moveTo(nodes[0].x, nodes[0].y);
-    for (let i = 1; i < numNodes; i++) {
-        ctx.lineTo(nodes[i].x, nodes[i].y);
-    }
-    ctx.stroke();
-
-    // Draw the Nodes (The Body)
-    ctx.globalAlpha = 1.0; 
+    // Draw nodes
     for (let i = 0; i < numNodes; i++) {
-        // Tapered radius for a lizard shape
         const radius = headRadius - (i * (headRadius - tailRadius) / numNodes);
-        
         ctx.beginPath();
         ctx.arc(nodes[i].x, nodes[i].y, radius, 0, Math.PI * 2);
         ctx.fillStyle = lizardColor;
@@ -121,9 +132,8 @@ function draw() {
 }
 
 function animate() {
-    update();
-    draw();
+    updateLizard();
+    drawLizard();
     requestAnimationFrame(animate);
 }
-
 animate();
