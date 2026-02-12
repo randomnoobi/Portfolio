@@ -43,8 +43,8 @@ const canvas = document.getElementById('lizard-canvas');
 const ctx = canvas.getContext('2d');
 
 // --- SETTINGS FOR A DISCRETE, SMALL LIZARD ---
-const numNodes = 18;        // Fewer nodes = shorter body
-const segmentLength = 12;   // Shorter distance = smaller size
+const numNodes = 9;        // Fewer nodes = shorter body
+const segmentLength = 10;   // Shorter distance = smaller size
 const headRadius = 5;       // Tiny head
 const tailRadius = 1;       // Tiny tail
 const lizardColor = '#000000'; // Matches your site text color
