@@ -178,4 +178,204 @@ body {
 .placeholder img {
     width: 100%;
     height: 100%;
-    object-f
+    object-fit: cover;
+    display: block;
+}
+
+/* Intro */
+.project-intro {
+    padding: 100px 4vw;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 60px;
+    max-width: 1400px;
+}
+
+.intro-text h1 {
+    font-size: clamp(48px, 6vw, 80px);
+    line-height: 1.1;
+    margin-bottom: 30px;
+}
+
+.intro-text .description {
+    font-size: 20px;
+    line-height: 1.5;
+    color: #333;
+}
+
+.intro-meta h3 {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    color: #888;
+}
+
+.meta-item {
+    margin-bottom: 30px;
+}
+
+/* =========================
+   PIXEL ART GALLERY
+   ========================= */
+
+/* Crisp pixels */
+.pixel-gallery img,
+.project-hero img {
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+/* Gallery wrapper */
+.pixel-gallery {
+    padding: 0 4vw 120px 4vw;
+}
+
+.pixel-controls {
+    max-width: 1200px;
+    margin: 0 auto 28px auto;
+}
+
+.pixel-section-title {
+    font-size: clamp(28px, 3.5vw, 44px);
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.pixel-section-sub {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #444;
+    max-width: 800px;
+}
+
+/* Grid */
+.pixel-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+@media (max-width: 1000px) {
+    .pixel-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 650px) {
+    .pixel-grid { grid-template-columns: 1fr; }
+}
+
+/* Card */
+.pixel-card {
+    border: 1px solid rgba(0,0,0,0.12);
+    border-radius: 16px;
+    overflow: hidden;
+    background: #fff;
+}
+
+/* Thumb button */
+.pixel-thumb {
+    width: 100%;
+    display: block;
+    padding: 0;
+    border: 0;
+    background: #f2f2f2;
+    cursor: pointer;
+}
+
+/* ✅ CONSISTENT THUMBNAIL FRAME */
+:root{
+    --thumb-box: 220px; /* change this to make thumbs taller/shorter */
+}
+
+.pixel-stage{
+    width: 100%;
+    height: var(--thumb-box);
+    display: grid;
+    place-items: center;
+    background: #f2f2f2;
+    overflow: hidden;
+}
+
+/* ✅ DON'T STRETCH GIFS */
+.pixel-stage img{
+    width: auto;
+    height: auto;
+    max-width: 92%;
+    max-height: 92%;
+    display: block;
+}
+
+/* Hover */
+.pixel-card:hover {
+    border-color: rgba(0,0,0,0.25);
+}
+
+/* Caption */
+.pixel-caption {
+    padding: 14px 14px 16px 14px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.pixel-title {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.pixel-meta {
+    font-size: 12px;
+    color: #666;
+    white-space: nowrap;
+}
+
+/* =========================
+   LIGHTBOX (MODAL)
+   ========================= */
+
+.pixel-lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.72);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    padding: 28px;
+}
+
+.pixel-lightbox.is-open {
+    display: flex;
+}
+
+.lb-content {
+    max-width: min(900px, 92vw);
+    max-height: 82vh;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.18);
+    background: rgba(0,0,0,0.2);
+}
+
+.lb-content img {
+    width: 100%;
+    height: auto;
+    display: block;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+.lb-close {
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    border: 1px solid rgba(255,255,255,0.25);
+    background: rgba(0,0,0,0.35);
+    color: #fff;
+    border-radius: 999px;
+    padding: 10px 14px;
+    cursor: pointer;
+}
