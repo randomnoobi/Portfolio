@@ -3,17 +3,17 @@
 ========================= */
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: #fff;
-    color: #000;
-    padding: 2vw;
-    -webkit-font-smoothing: antialiased;
+  font-family: 'Inter', sans-serif;
+  background-color: #fff;
+  color: #000;
+  padding: 2vw;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* =========================
@@ -21,12 +21,12 @@ body {
 ========================= */
 
 #lizard-canvas {
-    position: fixed;
-    inset: 0;
-    width: 100vw;
-    height: 100vh;
-    pointer-events: none;
-    z-index: 9999;
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
 }
 
 /* =========================
@@ -34,46 +34,46 @@ body {
 ========================= */
 
 .footer {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1.5fr;
-    gap: 40px;
-    padding: 80px 0 40px 0;
-    border-top: 1px solid #000;
-    margin-top: 100px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 40px;
+  padding: 80px 0 40px 0;
+  border-top: 1px solid #000;
+  margin-top: 100px;
 }
 
 .footer h1 {
-    font-size: clamp(32px, 5vw, 48px);
-    font-weight: 500;
-    margin-bottom: 20px;
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 500;
+  margin-bottom: 20px;
 }
 
 .footer h3 {
-    text-transform: uppercase;
-    font-size: 12px;
-    letter-spacing: 1px;
-    margin-bottom: 25px;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
 }
 
 .footer p {
-    font-size: 15px;
-    max-width: 400px;
-    line-height: 1.5;
+  font-size: 15px;
+  max-width: 400px;
+  line-height: 1.5;
 }
 
 .contact-links a {
-    text-decoration: none;
-    color: #000;
-    font-size: 14px;
-    transition: opacity 0.3s;
+  text-decoration: none;
+  color: #000;
+  font-size: 14px;
+  transition: opacity 0.3s;
 }
 
 .contact-links a:hover {
-    opacity: 0.5;
+  opacity: 0.5;
 }
 
 .right-align {
-    text-align: right;
+  text-align: right;
 }
 
 /* =========================
@@ -81,83 +81,85 @@ body {
 ========================= */
 
 .project-page {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 /* Back Button */
 
 .project-nav {
-    padding: 30px 4vw;
-    position: absolute;
-    top: 0;
-    z-index: 100;
+  padding: 30px 4vw;
+  position: absolute;
+  top: 0;
+  z-index: 100;
 }
 
 .project-nav a {
-    text-decoration: none;
-    color: #000;
-    background: rgba(255, 255, 255, 0.8);
-    padding: 10px 20px;
-    border-radius: 40px;
-    font-size: 14px;
-    font-weight: 500;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
+  text-decoration: none;
+  color: #000;
+  background: rgba(255,255,255,0.8);
+  padding: 10px 20px;
+  border-radius: 40px;
+  font-size: 14px;
+  font-weight: 500;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
 }
 
 .project-nav a:hover {
-    background: #000;
-    color: #fff;
+  background: #000;
+  color: #fff;
 }
 
 /* Hero */
 
 .project-hero {
-    width: 100%;
-    height: 85vh;
-    background-color: #f2f2f2;
+  width: 100%;
+  height: 85vh;
+  background-color: #f2f2f2;
 }
 
 .project-hero img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-/* Intro Section */
+/* =========================
+   INTRO SECTION
+========================= */
 
 .project-intro {
-    padding: 100px 4vw;
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 60px;
-    max-width: 1400px;
+  padding: 100px 4vw;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 60px;
+  max-width: 1400px;
 }
 
 .intro-text h1 {
-    font-size: clamp(48px, 6vw, 80px);
-    line-height: 1.1;
-    margin-bottom: 30px;
+  font-size: clamp(48px, 6vw, 80px);
+  line-height: 1.1;
+  margin-bottom: 30px;
 }
 
 .intro-text .description {
-    font-size: 20px;
-    line-height: 1.5;
-    color: #333;
+  font-size: 20px;
+  line-height: 1.5;
+  color: #333;
 }
 
 .intro-meta h3 {
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 10px;
-    color: #888;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  color: #888;
 }
 
 .meta-item {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 /* =========================
@@ -165,71 +167,79 @@ body {
 ========================= */
 
 .pixel-gallery {
-    padding: 0 4vw 120px 4vw;
+  padding: 0 4vw 120px 4vw;
 }
 
 /* Title */
 
 .pixel-controls {
-    max-width: 1200px;
-    margin: 0 auto 28px auto;
+  max-width: 1200px;
+  margin: 0 auto 28px auto;
 }
 
 .pixel-section-title {
-    font-size: clamp(28px, 3.5vw, 44px);
-    font-weight: 500;
-    margin-bottom: 10px;
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 500;
+  margin-bottom: 10px;
 }
 
 .pixel-section-sub {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #444;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
 }
 
 /* Grid */
 
 .pixel-grid {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 28px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
 }
 
 /* Card */
 
 .pixel-card {
-    border: 1px solid rgba(0,0,0,0.12);
-    border-radius: 18px;
-    overflow: hidden;
-    background: #fff;
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
 }
 
-/* Thumbnail */
+/* Thumbnail Button */
 
 .pixel-thumb {
-    width: 100%;
-    border: none;
-    background: #f2f2f2;
-    cursor: pointer;
-    padding: 0;
+  width: 100%;
+  border: none;
+  background: #f2f2f2;
+  cursor: pointer;
+  padding: 0;
 }
 
-/* --- Pixel thumbnails: NOT too zoomed --- */
+/* Image Stage (card image area) */
+
 .pixel-stage {
   width: 100%;
-  height: 280px;              /* card image area height */
+  height: 300px;
   display: grid;
   place-items: center;
   background: #f2f2f2;
   overflow: hidden;
 }
 
-/* This controls how big the gif appears IN THE CARD */
+/* 🔥 IMPORTANT: show full sprite, NOT zoomed */
+
 .pixel-stage img {
-  width: clamp(120px, 18vw, 200px);  /* <-- smaller so it won't look mega-zoomed */
+  width: auto;
   height: auto;
+
+  max-width: 160px;   /* 🔧 decrease if still zoomed */
+  max-height: 160px;
+
+  object-fit: contain;
+  transform: none;
 
   image-rendering: pixelated;
   image-rendering: crisp-edges;
@@ -238,18 +248,18 @@ body {
 /* Caption */
 
 .pixel-caption {
-    padding: 18px;
-    display: flex;
-    justify-content: space-between;
-    font-size: 15px;
+  padding: 18px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
 }
 
 .pixel-title {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 .pixel-meta {
-    color: #666;
+  color: #666;
 }
 
 /* =========================
@@ -257,48 +267,52 @@ body {
 ========================= */
 
 .pixel-lightbox {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.75);
-    display: none;
-    align-items: center;
-    justify-content: center;
-    z-index: 10000;
-    padding: 30px;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 30px;
 }
 
 .pixel-lightbox.is-open {
-    display: flex;
+  display: flex;
 }
 
-/* --- Lightbox: make spotlight big --- */
 .lb-content {
-  width: min(900px, 92vw);
-  height: min(700px, 82vh);   /* gives a real big viewing area */
+  width: min(1200px, 94vw);
+  height: min(900px, 88vh);
   display: grid;
   place-items: center;
   overflow: hidden;
 }
 
 .lb-content img {
-  width: clamp(320px, 65vw, 900px);  /* <-- bigger than card */
+  width: auto;
   height: auto;
-  max-height: 82vh;
+
+  max-width: min(1200px, 94vw);
+  max-height: 88vh;
+
+  object-fit: contain;
+  transform: none;
 
   image-rendering: pixelated;
   image-rendering: crisp-edges;
 }
 
 .lb-close {
-    position: fixed;
-    top: 18px;
-    right: 18px;
-    background: rgba(0,0,0,0.5);
-    color: #fff;
-    border: none;
-    border-radius: 999px;
-    padding: 10px 14px;
-    cursor: pointer;
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 14px;
+  cursor: pointer;
 }
 
 /* =========================
@@ -306,12 +320,12 @@ body {
 ========================= */
 
 @media (max-width: 900px) {
-    .project-intro {
-        grid-template-columns: 1fr;
-        padding: 60px 4vw;
-    }
+  .project-intro {
+    grid-template-columns: 1fr;
+    padding: 60px 4vw;
+  }
 
-    .pixel-grid {
-        grid-template-columns: 1fr;
-    }
+  .pixel-grid {
+    grid-template-columns: 1fr;
+  }
 }
