@@ -1,113 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project One | Sam Wang</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project One | Sam Wang</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
+
 <body class="project-page">
 
-    <nav class="project-nav">
-        <a href="index.html">← Back to Projects</a>
-    </nav>
+  <nav class="project-nav">
+    <a href="index.html">← Back to Projects</a>
+  </nav>
 
-    <!-- PHOTO 1: THE GIANT HERO -->
-    <header class="project-hero placeholder">
-        <img src="placeholder.jpg" alt="Hero Image">
-    </header>
+  <!-- PHOTO 1: THE GIANT HERO -->
+  <header class="project-hero placeholder">
+    <img src="placeholder.jpg" alt="Hero Image">
+  </header>
 
-    <!-- TEXT SECTION -->
-    <section class="project-intro reveal">
-        <div class="intro-text">
-            <h1>Project Title</h1>
-            <p class="description">
-                Explain your project here. Talk about your goal and your creative process. 
-                Even without images yet, this area will stay structured and clean.
-            </p>
-        </div>
-        <div class="intro-meta">
-            <div class="meta-item">
-                <h3>Role</h3>
-                <p>Lead Designer</p>
-            </div>
-            <div class="meta-item">
-                <h3>Year</h3>
-                <p>2025</p>
-            </div>
-        </div>
-    </section>
+  <!-- TEXT SECTION -->
+  <section class="project-intro reveal">
+    <div class="intro-text">
+      <h1>Project Title</h1>
+      <p class="description">
+        Explain your project here. Talk about your goal and your creative process.
+        Even without images yet, this area will stay structured and clean.
+      </p>
+    </div>
 
-    <!-- GALLERY SECTION -->
-<main class="pixel-gallery reveal">
+    <div class="intro-meta">
+      <div class="meta-item">
+        <h3>Role</h3>
+        <p>Lead Designer</p>
+      </div>
+      <div class="meta-item">
+        <h3>Year</h3>
+        <p>2025</p>
+      </div>
+    </div>
+  </section>
 
-  <!-- Optional: simple controls -->
-  <div class="pixel-controls">
-    <h2 class="pixel-section-title">Pixel Art Gallery</h2>
-    <p class="pixel-section-sub">GIF studies, loops, tiles, sprites, and scenes.</p>
-  </div>
+  <!-- PIXEL GALLERY SECTION -->
+  <main class="pixel-gallery reveal">
 
-  <div class="pixel-grid">
-    <!-- Each item -->
-    <figure class="pixel-card">
-      <button class="pixel-thumb" data-full="assets/project-1/Samurai Boy.gif" aria-label="Open pixel gif">
+    <div class="pixel-controls">
+      <h2 class="pixel-section-title">Pixel Art Gallery</h2>
+      <p class="pixel-section-sub">GIF studies, loops, tiles, sprites, and scenes.</p>
+    </div>
+
+    <div class="pixel-grid">
+
+      <!-- ITEM 1 -->
+      <figure class="pixel-card">
+        <button class="pixel-thumb" data-full="assets/project-1/Samurai Boy.gif" aria-label="Open pixel gif">
+          <!-- IMPORTANT: stage keeps consistent sizing -->
           <div class="pixel-stage" data-w="16" data-h="16">
-        <img
-          src="assets/project-1/Samurai Boy.gif"
-          alt="Pixel art scene 01"
-          loading="lazy"
-          decoding="async"
-        >
-      </button>
-      <figcaption class="pixel-caption">
-        <span class="pixel-title">Samurai</span>
-        <span class="pixel-meta">16x16</span>
-      </figcaption>
-    </figure>
+            <img
+              src="assets/project-1/Samurai Boy.gif"
+              alt="Samurai"
+              loading="lazy"
+              decoding="async"
+            >
+          </div>
+        </button>
+        <figcaption class="pixel-caption">
+          <span class="pixel-title">Samurai</span>
+          <span class="pixel-meta">16×16</span>
+        </figcaption>
+      </figure>
 
-    <figure class="pixel-card">
-      <button class="pixel-thumb" data-full="assets/project-1/Gladiator(Redo).gif" aria-label="Open pixel gif">
+      <!-- ITEM 2 -->
+      <figure class="pixel-card">
+        <button class="pixel-thumb" data-full="assets/project-1/Gladiator(Redo).gif" aria-label="Open pixel gif">
           <div class="pixel-stage" data-w="32" data-h="32">
-        <img src="assets/project-1/Gladiator(Redo).gif" alt="Character run cycle" loading="lazy" decoding="async">
-      </button>
-      <figcaption class="pixel-caption">
-        <span class="pixel-title">Gladiator</span>
-        <span class="pixel-meta">32x32 • 8 frames</span>
-      </figcaption>
-    </figure>
+            <img
+              src="assets/project-1/Gladiator(Redo).gif"
+              alt="Gladiator"
+              loading="lazy"
+              decoding="async"
+            >
+          </div>
+        </button>
+        <figcaption class="pixel-caption">
+          <span class="pixel-title">Gladiator</span>
+          <span class="pixel-meta">32×32</span>
+        </figcaption>
+      </figure>
 
-    <!-- Add more pixel-card blocks... -->
+      <!-- Add more items the same way... -->
+
+    </div>
+  </main>
+
+  <!-- LIGHTBOX (modal) -->
+  <div class="pixel-lightbox" id="pixelLightbox" aria-hidden="true">
+    <button class="lb-close" id="lbClose" aria-label="Close">✕</button>
+    <div class="lb-content">
+      <img id="lbImg" alt="">
+    </div>
   </div>
-</main>
 
-<!-- LIGHTBOX (modal) -->
-<div class="pixel-lightbox" id="pixelLightbox" aria-hidden="true">
-  <button class="lb-close" id="lbClose" aria-label="Close">✕</button>
-  <div class="lb-content">
-    <img id="lbImg" alt="">
-  </div>
-</div>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-column">
+      <h1>Sam Wang</h1>
+      <p>Creative focused on clarity and intentional collaboration.</p>
+    </div>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="footer-column">
-            <h1>Sam Wang</h1>
-            <p>Creative focused on clarity and intentional collaboration.</p>
-        </div>
-        <div class="footer-column">
-            <h3>Contact</h3>
-            <div class="contact-links">
-                <a href="mailto:samwang2028@gmail.com">→ Email</a>
-                <br>
-                <a href="tel:+13106780618">→ +1 310 678 0618</a>
-            </div>
-        </div>
-        <div class="footer-column right-align">
-            <p id="current-time">Los Angeles, Loading...</p>
-        </div>
-    </footer>
+    <div class="footer-column">
+      <h3>Contact</h3>
+      <div class="contact-links">
+        <a href="mailto:samwang2028@gmail.com">→ Email</a>
+        <br>
+        <a href="tel:+13106780618">→ +1 310 678 0618</a>
+      </div>
+    </div>
 
-    <script src="script.js"></script>
+    <div class="footer-column right-align">
+      <p id="current-time">Los Angeles, Loading...</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
