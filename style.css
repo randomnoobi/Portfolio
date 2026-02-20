@@ -284,30 +284,34 @@ body {
     cursor: pointer;
 }
 
-/* ✅ CONSISTENT THUMBNAIL FRAME */
+/* Consistent thumbnail frame */
 :root{
-    --thumb-box: 340px; /* change this to make thumbs taller/shorter */
+  --thumb-box: 260px;  /* stage height (bigger card) */
+  --pixel-zoom: 6;     /* sprite zoom (THIS is the big change) */
 }
 
 .pixel-stage{
-    width: 100%;
-    height: var(--thumb-box);
-    display: grid;
-    place-items: center;
-    background: #f2f2f2;
-    overflow: hidden;
+  width: 100%;
+  height: var(--thumb-box);
+  display: grid;
+  place-items: center;
+  background: #f2f2f2;
+  overflow: hidden; /* crops when zoomed */
 }
 
-/* ✅ DON'T STRETCH GIFS */
+/* Zoom the gif inside the stage */
 .pixel-stage img{
-    image-rendering: pixelated;
-    image-rendering: crisp-edges;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 
-    width: 160px;   /* ← CONTROL SIZE HERE */
-    height: auto;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
 
-    object-fit: contain;
+  transform: scale(var(--pixel-zoom));
+  transform-origin: center;
 }
+
 
 /* Hover */
 .pixel-card:hover {
