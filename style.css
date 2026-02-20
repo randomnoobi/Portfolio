@@ -303,11 +303,10 @@ body {
     image-rendering: pixelated;
     image-rendering: crisp-edges;
 
-    transform: scale(6);   /* ← CHANGE THIS NUMBER */
-    transform-origin: center;
-
-    width: auto;
+    width: 160px;   /* ← CONTROL SIZE HERE */
     height: auto;
+
+    object-fit: contain;
 }
 
 /* Hover */
