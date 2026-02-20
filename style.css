@@ -300,11 +300,14 @@ body {
 
 /* ✅ DON'T STRETCH GIFS */
 .pixel-stage img{
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+
+    transform: scale(6);   /* ← CHANGE THIS NUMBER */
+    transform-origin: center;
+
     width: auto;
     height: auto;
-    max-width: 95%;
-    max-height: 95%;
-    display: block;
 }
 
 /* Hover */
