@@ -1,3 +1,7 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -12,7 +16,10 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* --- Lizard / Snake Cursor Overlay --- */
+/* =========================
+   LIZARD CANVAS
+========================= */
+
 #lizard-canvas {
     position: fixed;
     inset: 0;
@@ -22,48 +29,10 @@ body {
     z-index: 9999;
 }
 
-/* Homepage Grid */
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
+/* =========================
+   FOOTER
+========================= */
 
-.project-link {
-    text-decoration: none;
-    color: inherit;
-}
-
-.project-item {
-    width: 100%;
-    margin-bottom: 40px;
-}
-
-.image-container {
-    width: 100%;
-    aspect-ratio: 16 / 10;
-    background-color: #f0f0f0;
-    overflow: hidden;
-}
-
-.image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.project-link:hover .image-container img {
-    transform: scale(1.04);
-}
-
-.project-info {
-    margin-top: 15px;
-    font-size: 14px;
-    font-weight: 300;
-}
-
-/* Footer Section */
 .footer {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1.5fr;
@@ -92,9 +61,6 @@ body {
     line-height: 1.5;
 }
 
-.footer ul { list-style: none; }
-.footer li { font-size: 14px; margin-bottom: 8px; color: #333; }
-
 .contact-links a {
     text-decoration: none;
     color: #000;
@@ -102,41 +68,25 @@ body {
     transition: opacity 0.3s;
 }
 
-.contact-links a:hover { opacity: 0.5; }
-
-.right-align { text-align: right; }
-
-/* Scroll Animation */
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 1s ease-out;
+.contact-links a:hover {
+    opacity: 0.5;
 }
 
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
+.right-align {
+    text-align: right;
 }
 
-/* Mobile Layout */
-@media (max-width: 900px) {
-    .portfolio-grid { grid-template-columns: 1fr; }
-    .footer { grid-template-columns: 1fr 1fr; }
-}
+/* =========================
+   PROJECT PAGE
+========================= */
 
-/* Project Detail Page Styles */
-.detail-header { margin: 10vh 0; max-width: 900px; }
-.detail-header h1 { font-size: clamp(40px, 8vw, 80px); margin-bottom: 20px; }
-.detail-description { font-size: 20px; line-height: 1.6; margin-bottom: 60px; }
-.detail-image { width: 100%; margin-bottom: 20px; display: block; }
-
-/* --- Project Detail Page Styling --- */
 .project-page {
     padding: 0;
     margin: 0;
 }
 
 /* Back Button */
+
 .project-nav {
     padding: 30px 4vw;
     position: absolute;
@@ -162,27 +112,22 @@ body {
     color: #fff;
 }
 
-/* Placeholder */
-.placeholder {
-    background-color: #f2f2f2;
-    position: relative;
-    overflow: hidden;
-}
-
 /* Hero */
+
 .project-hero {
     width: 100%;
     height: 85vh;
+    background-color: #f2f2f2;
 }
 
-.placeholder img {
+.project-hero img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
 }
 
-/* Intro */
+/* Intro Section */
+
 .project-intro {
     padding: 100px 4vw;
     display: grid;
@@ -217,19 +162,13 @@ body {
 
 /* =========================
    PIXEL ART GALLERY
-   ========================= */
+========================= */
 
-/* Crisp pixels */
-.pixel-gallery img,
-.project-hero img {
-    image-rendering: pixelated;
-    image-rendering: crisp-edges;
-}
-
-/* Gallery wrapper */
 .pixel-gallery {
     padding: 0 4vw 120px 4vw;
 }
+
+/* Title */
 
 .pixel-controls {
     max-width: 1200px;
@@ -246,111 +185,87 @@ body {
     font-size: 16px;
     line-height: 1.6;
     color: #444;
-    max-width: 800px;
 }
 
 /* Grid */
+
 .pixel-grid {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 18px;
-}
-
-@media (max-width: 1000px) {
-    .pixel-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-
-@media (max-width: 650px) {
-    .pixel-grid { grid-template-columns: 1fr; }
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
 }
 
 /* Card */
+
 .pixel-card {
     border: 1px solid rgba(0,0,0,0.12);
-    border-radius: 16px;
+    border-radius: 18px;
     overflow: hidden;
     background: #fff;
 }
 
-/* Thumb button */
+/* Thumbnail */
+
 .pixel-thumb {
     width: 100%;
-    display: block;
-    padding: 0;
-    border: 0;
+    border: none;
     background: #f2f2f2;
     cursor: pointer;
+    padding: 0;
 }
 
-/* Consistent thumbnail frame */
-:root{
-  --thumb-box: 260px;  /* stage height (bigger card) */
-  --pixel-zoom: 6;     /* sprite zoom (THIS is the big change) */
+/* 🔥 Clean, natural scaling */
+
+.pixel-stage {
+    width: 100%;
+    height: 340px;   /* Bigger card height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f2f2f2;
 }
 
-.pixel-stage{
-  width: 100%;
-  height: var(--thumb-box);
-  display: grid;
-  place-items: center;
-  background: #f2f2f2;
-  overflow: hidden; /* crops when zoomed */
-}
+/* THIS is the important part */
 
-/* Zoom the gif inside the stage */
-.pixel-stage img{
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-
-  image-rendering: pixelated;
-  image-rendering: crisp-edges;
-
-  transform: scale(var(--pixel-zoom));
-  transform-origin: center;
-}
-
-
-/* Hover */
-.pixel-card:hover {
-    border-color: rgba(0,0,0,0.25);
+.pixel-stage img {
+    width: 80%;     /* Controls how large sprite appears */
+    height: auto;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
 }
 
 /* Caption */
+
 .pixel-caption {
-    padding: 14px 14px 16px 14px;
+    padding: 18px;
     display: flex;
-    align-items: baseline;
     justify-content: space-between;
-    gap: 12px;
+    font-size: 15px;
 }
 
 .pixel-title {
-    font-size: 14px;
     font-weight: 500;
 }
 
 .pixel-meta {
-    font-size: 12px;
     color: #666;
-    white-space: nowrap;
 }
 
 /* =========================
-   LIGHTBOX (MODAL)
-   ========================= */
+   LIGHTBOX
+========================= */
 
 .pixel-lightbox {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.72);
+    background: rgba(0,0,0,0.75);
     display: none;
     align-items: center;
     justify-content: center;
     z-index: 10000;
-    padding: 28px;
+    padding: 30px;
 }
 
 .pixel-lightbox.is-open {
@@ -358,18 +273,13 @@ body {
 }
 
 .lb-content {
-    max-width: min(900px, 92vw);
-    max-height: 82vh;
-    border-radius: 18px;
-    overflow: hidden;
-    border: 1px solid rgba(255,255,255,0.18);
-    background: rgba(0,0,0,0.2);
+    max-width: 900px;
+    max-height: 85vh;
 }
 
 .lb-content img {
     width: 100%;
     height: auto;
-    display: block;
     image-rendering: pixelated;
     image-rendering: crisp-edges;
 }
@@ -378,10 +288,25 @@ body {
     position: fixed;
     top: 18px;
     right: 18px;
-    border: 1px solid rgba(255,255,255,0.25);
-    background: rgba(0,0,0,0.35);
+    background: rgba(0,0,0,0.5);
     color: #fff;
+    border: none;
     border-radius: 999px;
     padding: 10px 14px;
     cursor: pointer;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+    .project-intro {
+        grid-template-columns: 1fr;
+        padding: 60px 4vw;
+    }
+
+    .pixel-grid {
+        grid-template-columns: 1fr;
+    }
 }
