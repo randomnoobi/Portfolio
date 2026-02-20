@@ -286,7 +286,7 @@ body {
 
 /* ✅ CONSISTENT THUMBNAIL FRAME */
 :root{
-    --thumb-box: 220px; /* change this to make thumbs taller/shorter */
+    --thumb-box: 340px; /* change this to make thumbs taller/shorter */
 }
 
 .pixel-stage{
