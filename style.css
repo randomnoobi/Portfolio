@@ -216,24 +216,23 @@ body {
     padding: 0;
 }
 
-/* 🔥 Clean, natural scaling */
-
+/* --- Pixel thumbnails: NOT too zoomed --- */
 .pixel-stage {
-    width: 100%;
-    height: 340px;   /* Bigger card height */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #f2f2f2;
+  width: 100%;
+  height: 280px;              /* card image area height */
+  display: grid;
+  place-items: center;
+  background: #f2f2f2;
+  overflow: hidden;
 }
 
-/* THIS is the important part */
-
+/* This controls how big the gif appears IN THE CARD */
 .pixel-stage img {
-    width: 80%;     /* Controls how large sprite appears */
-    height: auto;
-    image-rendering: pixelated;
-    image-rendering: crisp-edges;
+  width: clamp(120px, 18vw, 200px);  /* <-- smaller so it won't look mega-zoomed */
+  height: auto;
+
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
 }
 
 /* Caption */
@@ -272,16 +271,22 @@ body {
     display: flex;
 }
 
+/* --- Lightbox: make spotlight big --- */
 .lb-content {
-    max-width: 900px;
-    max-height: 85vh;
+  width: min(900px, 92vw);
+  height: min(700px, 82vh);   /* gives a real big viewing area */
+  display: grid;
+  place-items: center;
+  overflow: hidden;
 }
 
 .lb-content img {
-    width: 100%;
-    height: auto;
-    image-rendering: pixelated;
-    image-rendering: crisp-edges;
+  width: clamp(320px, 65vw, 900px);  /* <-- bigger than card */
+  height: auto;
+  max-height: 82vh;
+
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
 }
 
 .lb-close {
