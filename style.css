@@ -329,3 +329,51 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+/* ===== FINAL SIZE FIX (PASTE LAST) ===== */
+
+/* Card image area */
+.pixel-stage{
+  height: 300px !important;
+  display: grid !important;
+  place-items: center !important;
+  overflow: hidden !important;
+  background: #f2f2f2 !important;
+}
+
+/* ✅ THUMBNAILS: force upscale so 16x16 isn't tiny */
+.pixel-stage img{
+  width: 240px !important;     /* <- change this (200–320) */
+  height: auto !important;
+
+  max-width: none !important;
+  max-height: none !important;
+
+  object-fit: contain !important;
+  transform: none !important;
+
+  image-rendering: pixelated !important;
+  image-rendering: crisp-edges !important;
+}
+
+/* ✅ LIGHTBOX: make spotlight large */
+.lb-content{
+  width: min(1200px, 95vw) !important;
+  height: min(900px, 90vh) !important;
+  display: grid !important;
+  place-items: center !important;
+}
+
+#lbImg{
+  width: min(900px, 90vw) !important;  /* <- change this (700–1100) */
+  height: auto !important;
+
+  max-width: none !important;
+  max-height: 90vh !important;
+
+  object-fit: contain !important;
+  transform: none !important;
+
+  image-rendering: pixelated !important;
+  image-rendering: crisp-edges !important;
+}
