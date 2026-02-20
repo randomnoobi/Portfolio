@@ -302,8 +302,8 @@ body {
 .pixel-stage img{
     width: auto;
     height: auto;
-    max-width: 92%;
-    max-height: 92%;
+    max-width: 95%;
+    max-height: 95%;
     display: block;
 }
 
