@@ -251,3 +251,161 @@ body {
     .project-hero { height: 60vh; }
 }
 
+/* =========================
+   PIXEL ART GALLERY
+   ========================= */
+
+/* Make pixel art stay crispy */
+.pixel-gallery img,
+.project-hero img {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* Optional: give the pixel page a slightly different vibe */
+.project-page {
+  background: #fff;
+}
+
+/* Gallery wrapper */
+.pixel-gallery {
+  padding: 0 4vw 120px 4vw;
+}
+
+/* Title / description */
+.pixel-controls {
+  max-width: 1200px;
+  margin: 0 auto 28px auto;
+}
+
+.pixel-section-title {
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.pixel-section-sub {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+  max-width: 800px;
+}
+
+/* Responsive grid */
+.pixel-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+@media (max-width: 1000px) {
+  .pixel-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 650px) {
+  .pixel-grid { grid-template-columns: 1fr; }
+}
+
+/* Card */
+.pixel-card {
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+}
+
+/* Thumbnail button */
+.pixel-thumb {
+  width: 100%;
+  display: block;
+  padding: 0;
+  border: 0;
+  background: #f2f2f2;
+  cursor: pointer;
+}
+
+/* Keep a clean “frame” for gifs (no weird stretching) */
+.pixel-thumb img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transform: translateZ(0); /* helps with smoother hover on some browsers */
+}
+
+/* Optional: subtle hover without blurring pixels */
+.pixel-card:hover {
+  border-color: rgba(0,0,0,0.25);
+}
+
+/* Caption */
+.pixel-caption {
+  padding: 14px 14px 16px 14px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.pixel-title {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.pixel-meta {
+  font-size: 12px;
+  color: #666;
+  white-space: nowrap;
+}
+
+/* =========================
+   LIGHTBOX (MODAL)
+   ========================= */
+
+.pixel-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.72);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 28px;
+}
+
+.pixel-lightbox.is-open {
+  display: flex;
+}
+
+.lb-content {
+  max-width: min(900px, 92vw);
+  max-height: 82vh;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(0,0,0,0.2);
+}
+
+/* Lightbox image: keep pixel crisp */
+.lb-content img {
+  width: 100%;
+  height: auto;
+  display: block;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.lb-close {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  border: 1px solid rgba(255,255,255,0.25);
+  background: rgba(0,0,0,0.35);
+  color: #fff;
+  border-radius: 999px;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+
+
