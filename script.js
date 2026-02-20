@@ -199,3 +199,44 @@ videoItems.forEach(item => {
     }
     loop();
 })();
+
+
+(() => {
+  const lightbox = document.getElementById("pixelLightbox");
+  const lbImg = document.getElementById("lbImg");
+  const lbClose = document.getElementById("lbClose");
+
+  if (!lightbox || !lbImg || !lbClose) return;
+
+  const open = (src, alt = "") => {
+    lbImg.src = src;
+    lbImg.alt = alt;
+    lightbox.classList.add("is-open");
+    lightbox.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  };
+
+  const close = () => {
+    lightbox.classList.remove("is-open");
+    lightbox.setAttribute("aria-hidden", "true");
+    lbImg.src = "";
+    document.body.style.overflow = "";
+  };
+
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest(".pixel-thumb");
+    if (btn) {
+      const img = btn.querySelector("img");
+      const full = btn.dataset.full || img.src;
+      open(full, img?.alt || "");
+    }
+    if (e.target === lightbox) close();
+  });
+
+  lbClose.addEventListener("click", close);
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") close();
+  });
+})();
+
