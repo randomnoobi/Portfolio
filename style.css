@@ -106,50 +106,175 @@ body {
 
 .right-align { text-align: right; }
 
-/* =========================================
-   5. PIXEL ART GALLERY (Individual Scaling)
-   ========================================= */
+/* =========================
+PIXEL ART GALLERY
+========================= */
 .pixel-gallery {
-  padding: 0 4vw 120px 4vw;
-  max-width: 1400px;
-  margin: 0 auto;
+padding: 0 4vw 120px 4vw;
 }
-
+/* Title */
+.pixel-controls {
+max-width: 1200px;
+margin: 0 auto 28px auto;
+}
+.pixel-section-title {
+font-size: clamp(28px, 3.5vw, 44px);
+font-weight: 500;
+margin-bottom: 10px;
+}
+.pixel-section-sub {
+font-size: 16px;
+line-height: 1.6;
+color: #444;
+}
+/* Grid */
 .pixel-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr; 
-  gap: 30px;
+max-width: 1200px;
+margin: 0 auto;
+display: grid;
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 28px;
 }
-
+/* Card */
 .pixel-card {
-  border: 1px solid rgba(0,0,0,0.1);
-  border-radius: 20px;
-  overflow: hidden;
-  background: #fff;
+border: 1px solid rgba(0,0,0,0.12);
+border-radius: 18px;
+overflow: hidden;
+background: #fff;
 }
-
+/* Thumbnail Button */
+.pixel-thumb {
+width: 100%;
+border: none;
+background: #f2f2f2;
+cursor: pointer;
+padding: 0;
+}
+/* Image Stage (card image area) */
 .pixel-stage {
-  width: 100%;
-  height: 350px;
-  background-color: #f2f2f2;
-  display: grid;
-  place-items: center;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
+width: 100%;
+height: 300px;
+display: grid;
+place-items: center;
+background: #f2f2f2;
+overflow: hidden;
 }
-
-/* GIF Rendering Settings */
+/* 🔥 IMPORTANT: show full sprite, NOT zoomed */
 .pixel-stage img {
-  width: 50%; /* Default size, override this in HTML with style="width:XX%" */
-  height: auto !important;
-  image-rendering: pixelated !important;
-  image-rendering: crisp-edges !important;
+width: auto;
+height: auto;
+max-width: 160px;   /* 🔧 decrease if still zoomed */
+max-height: 160px;
+object-fit: contain;
+transform: none;
+image-rendering: pixelated;
+image-rendering: crisp-edges;
 }
-
+/* Caption */
 .pixel-caption {
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  font-size: 15px;
+padding: 18px;
+display: flex;
+justify-content: space-between;
+font-size: 15px;
+}
+.pixel-title {
+font-weight: 500;
+}
+.pixel-meta {
+color: #666;
+}
+/* =========================
+LIGHTBOX
+========================= */
+.pixel-lightbox {
+position: fixed;
+inset: 0;
+background: rgba(0,0,0,0.75);
+display: none;
+align-items: center;
+justify-content: center;
+z-index: 10000;
+padding: 30px;
+}
+.pixel-lightbox.is-open {
+display: flex;
+}
+.lb-content {
+width: min(1200px, 94vw);
+height: min(900px, 88vh);
+display: grid;
+place-items: center;
+overflow: hidden;
+}
+.lb-content img {
+width: auto;
+height: auto;
+max-width: min(1200px, 94vw);
+max-height: 88vh;
+object-fit: contain;
+transform: none;
+image-rendering: pixelated;
+image-rendering: crisp-edges;
+}
+.lb-close {
+position: fixed;
+top: 18px;
+right: 18px;
+background: rgba(0,0,0,0.5);
+color: #fff;
+border: none;
+border-radius: 999px;
+padding: 10px 14px;
+cursor: pointer;
+}
+/* =========================
+RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+.project-intro {
+grid-template-columns: 1fr;
+padding: 60px 4vw;
+}
+.pixel-grid {
+grid-template-columns: 1fr;
+}
+}
+/* ===== FINAL SIZE FIX (PASTE LAST) ===== */
+/* Card image area */
+.pixel-stage{
+height: 300px !important;
+display: grid !important;
+place-items: center !important;
+overflow: hidden !important;
+background: #f2f2f2 !important;
+}
+/* ✅ THUMBNAILS: force upscale so 16x16 isn't tiny /
+.pixel-stage img{
+width: 240px !important;     / <- change this (200–320) */
+height: auto !important;
+max-width: none !important;
+max-height: none !important;
+object-fit: contain !important;
+transform: none !important;
+image-rendering: pixelated !important;
+image-rendering: crisp-edges !important;
+}
+/* ✅ LIGHTBOX: make spotlight large */
+.lb-content{
+width: min(1200px, 95vw) !important;
+height: min(900px, 90vh) !important;
+display: grid !important;
+place-items: center !important;
+}
+#lbImg{
+width: min(900px, 90vw) !important;  /* <- change this (700–1100) */
+height: auto !important;
+max-width: none !important;
+max-height: 90vh !important;
+object-fit: contain !important;
+transform: none !important;
+image-rendering: pixelated !important;
+image-rendering: crisp-edges !important;
 }
 
 /* =========================================
