@@ -1,242 +1,87 @@
 /**
- * 1. SCROLL REVEAL ANIMATION
- * Makes projects fade in as you scroll down
- */
-const scrollReveal = function() {
-    const reveals = document.querySelectorAll(".reveal");
-    reveals.forEach(el => {
-        const windowHeight = window.innerHeight;
-        const elementTop = el.getBoundingClientRect().top;
-        const elementVisible = 100;
-        if (elementTop < windowHeight - elementVisible) {
-            el.classList.add("active");
-        }
-    });
-};
-
-window.addEventListener("scroll", scrollReveal);
-scrollReveal(); // Run once on load to show items already in view
-
-
-/**
- * 2. REAL-TIME LOS ANGELES CLOCK
+ * 1. CLOCK & SCROLL REVEAL
  */
 function updateTime() {
     const timeDisplay = document.getElementById("current-time");
     if (!timeDisplay) return;
-
-    const options = { 
-        timeZone: 'America/Los_Angeles',
-        hour: '2-digit', 
-        minute: '2-digit', 
-        hour12: true, 
-        month: 'long', 
-        day: 'numeric' 
-    };
-    
     const now = new Date();
-    const timeString = now.toLocaleString('en-US', options);
-    timeDisplay.textContent = "Los Angeles " + timeString;
+    const options = { timeZone: 'America/Los_Angeles', hour: '2-digit', minute: '2-digit', hour12: true, month: 'long', day: 'numeric' };
+    timeDisplay.textContent = "Los Angeles " + now.toLocaleString('en-US', options);
 }
 setInterval(updateTime, 1000);
 updateTime();
 
+const scrollReveal = function() {
+    const reveals = document.querySelectorAll(".reveal");
+    reveals.forEach(el => {
+        if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+            el.classList.add("active");
+        }
+    });
+};
+window.addEventListener("scroll", scrollReveal);
+scrollReveal();
 
 /**
- * 3. VIDEO HOVER LOGIC (YouTube Style)
- * Plays video on hover, resets to start on mouse leave
+ * 2. VIDEO HOVER LOGIC
  */
 const videoItems = document.querySelectorAll('.video-container');
-
 videoItems.forEach(item => {
     const video = item.querySelector('.hover-video');
     if (!video) return;
-
-    item.addEventListener('mouseenter', () => {
-        const playPromise = video.play();
-        if (playPromise !== undefined) {
-            playPromise.catch(() => { /* Auto-play prevented */ });
-        }
-    });
-
-    item.addEventListener('mouseleave', () => {
-        video.pause();
-        video.currentTime = 0; // Resets to beginning
-    });
+    item.addEventListener('mouseenter', () => video.play().catch(()=>{}));
+    item.addEventListener('mouseleave', () => { video.pause(); video.currentTime = 0; });
 });
 
 /**
- * 4. MULTI-JOINT FOLLOWING "LIZARD" (Canvas Overlay)
- * N circular nodes, fixed distance constraints, head follows mouse.
+ * 3. LIZARD SCRIPT (Black lizard on transparent background)
  */
-(() => {
-    const canvas = document.getElementById("lizard-canvas");
-    if (!canvas) return;
+const canvas = document.getElementById('lizard-canvas');
+const ctx = canvas.getContext('2d');
 
-    const ctx = canvas.getContext("2d");
+const numNodes = 20;
+const segmentLength = 8;
+const headRadius = 4;
+const tailRadius = 0.5;
+const lizardColor = '#000000'; // Pure Black
 
-    // --- Config ---
-    const N = 7;              // number of nodes
-    const LINK = 30;           // fixed distance between nodes (px)
-    const HEAD_RADIUS = 8;     // node size
-    const TAIL_RADIUS = 3;
-    const LINE_WIDTH = 3;
+let mouse = { x: -100, y: -100 };
+let nodes = [];
+for (let i = 0; i < numNodes; i++) nodes.push({ x: mouse.x, y: mouse.y });
 
-    // Colors (simple + clean)
-    const LINE_COLOR = "rgba(0,0,0,0.35)";
-    const NODE_COLOR = "rgba(0,0,0,0.55)";
+window.addEventListener('mousemove', (e) => { mouse.x = e.clientX; mouse.y = e.clientY; });
 
-    // --- Internal state ---
-    const nodes = [];
-    const mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
-    const head = { x: mouse.x, y: mouse.y };
+function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resize);
+resize();
 
-    // Resize canvas to device pixel ratio (crisp lines)
-    function resize() {
-        const dpr = Math.max(1, window.devicePixelRatio || 1);
-        canvas.width = Math.floor(window.innerWidth * dpr);
-        canvas.height = Math.floor(window.innerHeight * dpr);
-        canvas.style.width = window.innerWidth + "px";
-        canvas.style.height = window.innerHeight + "px";
-        ctx.setTransform(dpr, 0, 0, dpr, 0, 0); // draw in CSS pixels
-    }
-    window.addEventListener("resize", resize);
-    resize();
+function animate() {
+    // Clear everything so the background stays white
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // Initialize nodes in a line behind the head
-    for (let i = 0; i < N; i++) {
-        nodes.push({
-            x: head.x - i * LINK,
-            y: head.y
-        });
-    }
+    if (mouse.x > 0) {
+        nodes[0].x = mouse.x;
+        nodes[0].y = mouse.y;
 
-    // Track mouse (client coordinates match our drawing coordinates)
-    window.addEventListener("mousemove", (e) => {
-        mouse.x = e.clientX;
-        mouse.y = e.clientY;
-    });
-
-    // Optional: touch support
-    window.addEventListener("touchmove", (e) => {
-        if (!e.touches || !e.touches[0]) return;
-        mouse.x = e.touches[0].clientX;
-        mouse.y = e.touches[0].clientY;
-    }, { passive: true });
-
-    // Smooth head movement (feels more "alive" than teleporting)
-    const HEAD_SMOOTHING = 0.25; // 0..1 (higher = snappier)
-
-    function update() {
-        // 1) Head follows cursor
-        head.x += (mouse.x - head.x) * HEAD_SMOOTHING;
-        head.y += (mouse.y - head.y) * HEAD_SMOOTHING;
-
-        nodes[0].x = head.x;
-        nodes[0].y = head.y;
-
-        // 2) Each child maintains strict fixed distance from its parent
-        for (let i = 1; i < N; i++) {
-            const parent = nodes[i - 1];
-            const child = nodes[i];
-
-            const dx = child.x - parent.x;
-            const dy = child.y - parent.y;
-            const dist = Math.hypot(dx, dy) || 0.0001;
-
-            // Put child on circle around parent with radius LINK
-            // Direction based on child's current position relative to parent.
-            const nx = dx / dist;
-            const ny = dy / dist;
-
-            child.x = parent.x + nx * LINK;
-            child.y = parent.y + ny * LINK;
+        for (let i = 1; i < numNodes; i++) {
+            const dx = nodes[i-1].x - nodes[i].x;
+            const dy = nodes[i-1].y - nodes[i].y;
+            const angle = Math.atan2(dy, dx);
+            nodes[i].x = nodes[i-1].x - Math.cos(angle) * segmentLength;
+            nodes[i].y = nodes[i-1].y - Math.sin(angle) * segmentLength;
         }
-    }
 
-    function draw() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-        // Draw segments
-        ctx.lineWidth = LINE_WIDTH;
-        ctx.strokeStyle = LINE_COLOR;
-        ctx.lineCap = "round";
-
-        ctx.beginPath();
-        ctx.moveTo(nodes[0].x, nodes[0].y);
-        for (let i = 1; i < N; i++) ctx.lineTo(nodes[i].x, nodes[i].y);
-        ctx.stroke();
-
-        // Draw nodes (head slightly bigger, tail smaller)
-        ctx.fillStyle = NODE_COLOR;
-        for (let i = 0; i < N; i++) {
-            const t = i / (N - 1);
-            const r = HEAD_RADIUS + (TAIL_RADIUS - HEAD_RADIUS) * t;
-
+        for (let i = 0; i < numNodes; i++) {
+            const r = headRadius - (i * (headRadius - tailRadius) / numNodes);
             ctx.beginPath();
             ctx.arc(nodes[i].x, nodes[i].y, r, 0, Math.PI * 2);
+            ctx.fillStyle = lizardColor;
             ctx.fill();
         }
-
-        // Tiny "nose" dot to suggest direction (optional, subtle)
-        const nose = nodes[0];
-        const next = nodes[1] || nodes[0];
-        const ndx = nose.x - next.x;
-        const ndy = nose.y - next.y;
-        const nlen = Math.hypot(ndx, ndy) || 0.0001;
-        const ux = ndx / nlen, uy = ndy / nlen;
-
-        ctx.fillStyle = "rgba(0,0,0,0.25)";
-        ctx.beginPath();
-        ctx.arc(nose.x + ux * 10, nose.y + uy * 10, 2, 0, Math.PI * 2);
-        ctx.fill();
     }
-
-    function loop() {
-        update();
-        draw();
-        requestAnimationFrame(loop);
-    }
-    loop();
-})();
-
-
-(() => {
-  const lightbox = document.getElementById("pixelLightbox");
-  const lbImg = document.getElementById("lbImg");
-  const lbClose = document.getElementById("lbClose");
-
-  if (!lightbox || !lbImg || !lbClose) return;
-
-  const open = (src, alt = "") => {
-    lbImg.src = src;
-    lbImg.alt = alt;
-    lightbox.classList.add("is-open");
-    lightbox.setAttribute("aria-hidden", "false");
-    document.body.style.overflow = "hidden";
-  };
-
-  const close = () => {
-    lightbox.classList.remove("is-open");
-    lightbox.setAttribute("aria-hidden", "true");
-    lbImg.src = "";
-    document.body.style.overflow = "";
-  };
-
-  document.addEventListener("click", (e) => {
-    const btn = e.target.closest(".pixel-thumb");
-    if (btn) {
-      const img = btn.querySelector("img");
-      const full = btn.dataset.full || img.src;
-      open(full, img?.alt || "");
-    }
-    if (e.target === lightbox) close();
-  });
-
-  lbClose.addEventListener("click", close);
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") close();
-  });
-})();
-
+    requestAnimationFrame(animate);
+}
+animate();
