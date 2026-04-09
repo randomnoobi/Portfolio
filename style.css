@@ -9,7 +9,7 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #ffffff !important;
+  background-color: #ffffff !important; /* FORCES WHITE BACKGROUND */
   color: #000000;
   padding: 2vw;
   -webkit-font-smoothing: antialiased;
@@ -17,19 +17,19 @@ body {
 }
 
 /* =========================================
-   2. HOMEPAGE PROJECT GRID
+   2. HOMEPAGE PROJECT GRID (The Big Boxes)
    ========================================= */
 .portfolio-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Two columns */
+  grid-template-columns: 1fr 1fr;
   gap: 30px;
   width: 100%;
   margin-bottom: 100px;
 }
 
 .project-link {
-  text-decoration: none !important; /* Removes blue underline */
-  color: #000000 !important;       /* Forces text black */
+  text-decoration: none !important;
+  color: #000000 !important;
   display: block;
 }
 
@@ -37,12 +37,10 @@ body {
   width: 100%;
 }
 
-/* This forces the gray box to stay visible */
 .image-container {
-  width: 100% !important;
-  aspect-ratio: 16 / 10 !important; /* Keeps the rectangle shape */
-  background-color: #f2f2f2 !important; /* The gray color */
-  display: block !important;
+  width: 100%;
+  aspect-ratio: 16 / 10; /* Keeps the rectangle shape even if empty */
+  background-color: #f2f2f2; /* The gray placeholder color */
   overflow: hidden;
   position: relative;
   margin-bottom: 15px;
@@ -56,10 +54,6 @@ body {
   transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.project-link:hover .image-container {
-  background-color: #e8e8e8 !important; /* Slight darken on hover */
-}
-
 .project-link:hover .hover-video,
 .project-link:hover img {
   transform: scale(1.04);
@@ -68,7 +62,6 @@ body {
 .project-info {
   font-size: 14px;
   font-weight: 400;
-  letter-spacing: -0.2px;
 }
 
 /* =========================================
@@ -81,11 +74,11 @@ body {
   height: 100vh;
   pointer-events: none; 
   z-index: 9999;
-  background: transparent !important;
+  background: transparent !important; /* FIXED: Transparent, NOT black */
 }
 
 /* =========================================
-   4. FOOTER
+   4. FOOTER 
    ========================================= */
 .footer {
   display: grid;
@@ -97,8 +90,8 @@ body {
 }
 
 .footer h1 { font-size: 48px; font-weight: 500; margin-bottom: 20px; letter-spacing: -1.5px; }
-.footer h3 { text-transform: uppercase; font-size: 11px; letter-spacing: 1px; margin-bottom: 20px; color: #000; }
-.footer p { font-size: 15px; max-width: 420px; line-height: 1.5; color: #000; }
+.footer h3 { text-transform: uppercase; font-size: 11px; letter-spacing: 1px; margin-bottom: 20px; }
+.footer p { font-size: 15px; max-width: 420px; line-height: 1.5; }
 .footer ul { list-style: none; }
 .footer li { font-size: 15px; margin-bottom: 6px; }
 
@@ -114,128 +107,71 @@ body {
 .right-align { text-align: right; }
 
 /* =========================================
-   5. REVEAL ANIMATION
+   5. PIXEL ART GALLERY (Individual Scaling)
    ========================================= */
-.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 1s ease, transform 1s ease;
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* =========================================
-   6. RESPONSIVE (Mobile)
-   ========================================= */
-@media (max-width: 900px) {
-  .portfolio-grid { grid-template-columns: 1fr; }
-  .footer { 
-    grid-template-columns: 1fr; 
-    gap: 30px;
-  }
-  .right-align { text-align: left; }
-}
-
-/* =========================================
-   PIXEL ART GALLERY (FIXED GRID)
-   ========================================= */
-
 .pixel-gallery {
   padding: 0 4vw 120px 4vw;
   max-width: 1400px;
   margin: 0 auto;
 }
 
-.pixel-controls {
-  margin-bottom: 40px;
-}
-
-.pixel-section-title {
-  font-size: 32px;
-  font-weight: 500;
-  margin-bottom: 8px;
-}
-
-/* THE GRID: Forces 2 columns */
 .pixel-grid {
   display: grid;
   grid-template-columns: 1fr 1fr; 
   gap: 30px;
-  width: 100%;
 }
 
-/* THE CARD */
 .pixel-card {
   border: 1px solid rgba(0,0,0,0.1);
   border-radius: 20px;
   overflow: hidden;
-  background: #ffffff;
-  display: flex;
-  flex-direction: column;
+  background: #fff;
 }
 
-/* THE GRAY BOX (Stage) */
 .pixel-stage {
-  width: 100% !important;   /* Force it to fill the card width */
-  height: 350px !important;  /* Fixed height for consistency */
-  background-color: #f2f2f2 !important;
-  display: grid !important;
-  place-items: center !important;
+  width: 100%;
+  height: 350px;
+  background-color: #f2f2f2;
+  display: grid;
+  place-items: center;
   border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
-/* THE IMAGE: Crisp & Scaled */
+/* GIF Rendering Settings */
 .pixel-stage img {
-  width: auto !important;
+  width: 50%; /* Default size, override this in HTML with style="width:XX%" */
   height: auto !important;
-  max-width: 280px !important; /* Adjust this to make sprites bigger/smaller */
-  max-height: 280px !important;
-  image-rendering: pixelated !important; /* Keeps it sharp */
+  image-rendering: pixelated !important;
   image-rendering: crisp-edges !important;
 }
 
-/* CAPTION AREA */
 .pixel-caption {
   padding: 20px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   font-size: 15px;
 }
 
-.pixel-title {
-  font-weight: 500;
-  color: #000;
-}
+/* =========================================
+   6. PROJECT DETAIL PAGES (General)
+   ========================================= */
+.project-page { padding: 0; margin: 0; }
+.project-nav { padding: 30px 4vw; position: absolute; top: 0; z-index: 100; }
+.project-nav a { text-decoration: none; color: #000; background: rgba(255,255,255,0.8); padding: 10px 20px; border-radius: 40px; font-size: 14px; backdrop-filter: blur(10px); border: 1px solid rgba(0,0,0,0.1); }
 
-.pixel-meta {
-  color: #888;
-}
+.project-hero { width: 100%; height: 80vh; background-color: #f2f2f2; }
+.project-hero img { width: 100%; height: 100%; object-fit: cover; }
 
-/* LIGHTBOX (Clicking to see big version) */
-.pixel-lightbox {
-  position: fixed;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.98);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 10000;
-}
+.project-intro { padding: 100px 4vw; display: grid; grid-template-columns: 1.5fr 1fr; gap: 60px; }
+.intro-text h1 { font-size: clamp(40px, 6vw, 72px); line-height: 1.1; margin-bottom: 30px; }
 
-.pixel-lightbox.is-open { display: flex; }
+/* =========================================
+   7. REVEAL & RESPONSIVE
+   ========================================= */
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity 1s ease, transform 1s ease; }
+.reveal.active { opacity: 1; transform: translateY(0); }
 
-#lbImg {
-  max-width: 90vw;
-  max-height: 80vh;
-  image-rendering: pixelated;
-}
-
-/* MOBILE FIX */
-@media (max-width: 850px) {
-  .pixel-grid { grid-template-columns: 1fr; }
-  .pixel-stage { height: 300px !important; }
+@media (max-width: 900px) {
+  .portfolio-grid, .footer, .pixel-grid, .project-intro { grid-template-columns: 1fr; }
+  .right-align { text-align: left; }
 }
