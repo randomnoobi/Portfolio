@@ -9,7 +9,7 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #ffffff !important; /* FORCES WHITE BACKGROUND */
+  background-color: #ffffff !important;
   color: #000000;
   padding: 2vw;
   -webkit-font-smoothing: antialiased;
@@ -17,7 +17,7 @@ body {
 }
 
 /* =========================================
-   2. HOMEPAGE PROJECT GRID (The Big Boxes)
+   2. HOMEPAGE PROJECT GRID
    ========================================= */
 .portfolio-grid {
   display: grid;
@@ -39,14 +39,15 @@ body {
 
 .image-container {
   width: 100%;
-  aspect-ratio: 16 / 10; /* Keeps the rectangle shape even if empty */
-  background-color: #f2f2f2; /* The gray placeholder color */
+  aspect-ratio: 16 / 10;
+  background-color: #f2f2f2;
   overflow: hidden;
   position: relative;
   margin-bottom: 15px;
 }
 
-.hover-video, .image-container img {
+.hover-video,
+.image-container img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -65,20 +66,7 @@ body {
 }
 
 /* =========================================
-   3. CURSOR LIZARD (Transparent Layer)
-   ========================================= */
-#lizard-canvas {
-  position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none; 
-  z-index: 9999;
-  background: transparent !important; /* FIXED: Transparent, NOT black */
-}
-
-/* =========================================
-   4. FOOTER 
+   3. FOOTER
    ========================================= */
 .footer {
   display: grid;
@@ -89,214 +77,300 @@ body {
   margin-top: 50px;
 }
 
-.footer h1 { font-size: 48px; font-weight: 500; margin-bottom: 20px; letter-spacing: -1.5px; }
-.footer h3 { text-transform: uppercase; font-size: 11px; letter-spacing: 1px; margin-bottom: 20px; }
-.footer p { font-size: 15px; max-width: 420px; line-height: 1.5; }
-.footer ul { list-style: none; }
-.footer li { font-size: 15px; margin-bottom: 6px; }
+.footer h1 {
+  font-size: 48px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  letter-spacing: -1.5px;
+}
 
-.contact-links a { 
-  text-decoration: none; 
-  color: #000; 
-  font-size: 15px; 
+.footer h3 {
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.footer p {
+  font-size: 15px;
+  max-width: 420px;
+  line-height: 1.5;
+}
+
+.footer ul {
+  list-style: none;
+}
+
+.footer li {
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.contact-links a {
+  text-decoration: none;
+  color: #000;
+  font-size: 15px;
   display: block;
   margin-bottom: 8px;
 }
-.contact-links a:hover { opacity: 0.5; }
 
-.right-align { text-align: right; }
+.contact-links a:hover {
+  opacity: 0.5;
+}
+
+.right-align {
+  text-align: right;
+}
 
 /* =========================
-PIXEL ART GALLERY
-========================= */
+   PIXEL ART GALLERY
+   ========================= */
 .pixel-gallery {
-padding: 0 4vw 120px 4vw;
+  padding: 0 4vw 120px 4vw;
 }
-/* Title */
+
 .pixel-controls {
-max-width: 1200px;
-margin: 0 auto 28px auto;
+  max-width: 1200px;
+  margin: 0 auto 28px auto;
 }
+
 .pixel-section-title {
-font-size: clamp(28px, 3.5vw, 44px);
-font-weight: 500;
-margin-bottom: 10px;
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 500;
+  margin-bottom: 10px;
 }
+
 .pixel-section-sub {
-font-size: 16px;
-line-height: 1.6;
-color: #444;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
 }
-/* Grid */
+
 .pixel-grid {
-max-width: 1200px;
-margin: 0 auto;
-display: grid;
-grid-template-columns: repeat(2, minmax(0, 1fr));
-gap: 28px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
 }
-/* Card */
+
 .pixel-card {
-border: 1px solid rgba(0,0,0,0.12);
-border-radius: 18px;
-overflow: hidden;
-background: #fff;
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
 }
-/* Thumbnail Button */
+
 .pixel-thumb {
-width: 100%;
-border: none;
-background: #f2f2f2;
-cursor: pointer;
-padding: 0;
+  width: 100%;
+  border: none;
+  background: #f2f2f2;
+  cursor: pointer;
+  padding: 0;
 }
-/* Image Stage (card image area) */
+
 .pixel-stage {
-width: 100%;
-height: 300px;
-display: grid;
-place-items: center;
-background: #f2f2f2;
-overflow: hidden;
+  width: 100%;
+  height: 300px;
+  display: grid;
+  place-items: center;
+  background: #f2f2f2;
+  overflow: hidden;
 }
-/* 🔥 IMPORTANT: show full sprite, NOT zoomed */
+
 .pixel-stage img {
-width: auto;
-height: auto;
-max-width: 160px;   /* 🔧 decrease if still zoomed */
-max-height: 160px;
-object-fit: contain;
-transform: none;
-image-rendering: pixelated;
-image-rendering: crisp-edges;
+  width: auto;
+  height: auto;
+  max-width: 160px;
+  max-height: 160px;
+  object-fit: contain;
+  transform: none;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
 }
-/* Caption */
+
 .pixel-caption {
-padding: 18px;
-display: flex;
-justify-content: space-between;
-font-size: 15px;
+  padding: 18px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
 }
+
 .pixel-title {
-font-weight: 500;
+  font-weight: 500;
 }
+
 .pixel-meta {
-color: #666;
+  color: #666;
 }
+
 /* =========================
-LIGHTBOX
-========================= */
+   LIGHTBOX
+   ========================= */
 .pixel-lightbox {
-position: fixed;
-inset: 0;
-background: rgba(0,0,0,0.75);
-display: none;
-align-items: center;
-justify-content: center;
-z-index: 10000;
-padding: 30px;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 30px;
 }
+
 .pixel-lightbox.is-open {
-display: flex;
+  display: flex;
 }
+
 .lb-content {
-width: min(1200px, 94vw);
-height: min(900px, 88vh);
-display: grid;
-place-items: center;
-overflow: hidden;
+  width: min(1200px, 94vw);
+  height: min(900px, 88vh);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
 }
+
 .lb-content img {
-width: auto;
-height: auto;
-max-width: min(1200px, 94vw);
-max-height: 88vh;
-object-fit: contain;
-transform: none;
-image-rendering: pixelated;
-image-rendering: crisp-edges;
+  width: auto;
+  height: auto;
+  max-width: min(1200px, 94vw);
+  max-height: 88vh;
+  object-fit: contain;
+  transform: none;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
 }
+
 .lb-close {
-position: fixed;
-top: 18px;
-right: 18px;
-background: rgba(0,0,0,0.5);
-color: #fff;
-border: none;
-border-radius: 999px;
-padding: 10px 14px;
-cursor: pointer;
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 14px;
+  cursor: pointer;
 }
-/* =========================
-RESPONSIVE
-========================= */
-@media (max-width: 900px) {
-.project-intro {
-grid-template-columns: 1fr;
-padding: 60px 4vw;
+
+/* ===== FINAL SIZE FIX ===== */
+.pixel-stage {
+  height: 300px !important;
+  display: grid !important;
+  place-items: center !important;
+  overflow: hidden !important;
+  background: #f2f2f2 !important;
 }
-.pixel-grid {
-grid-template-columns: 1fr;
+
+/* THUMBNAILS: force upscale so 16x16 is not tiny */
+.pixel-stage img {
+  width: 240px !important;
+  height: auto !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  transform: none !important;
+  image-rendering: pixelated !important;
+  image-rendering: crisp-edges !important;
 }
+
+/* LIGHTBOX: make spotlight large */
+.lb-content {
+  width: min(1200px, 95vw) !important;
+  height: min(900px, 90vh) !important;
+  display: grid !important;
+  place-items: center !important;
 }
-/* ===== FINAL SIZE FIX (PASTE LAST) ===== */
-/* Card image area */
-.pixel-stage{
-height: 300px !important;
-display: grid !important;
-place-items: center !important;
-overflow: hidden !important;
-background: #f2f2f2 !important;
-}
-/* ✅ THUMBNAILS: force upscale so 16x16 isn't tiny /
-.pixel-stage img{
-width: 240px !important;     / <- change this (200–320) */
-height: auto !important;
-max-width: none !important;
-max-height: none !important;
-object-fit: contain !important;
-transform: none !important;
-image-rendering: pixelated !important;
-image-rendering: crisp-edges !important;
-}
-/* ✅ LIGHTBOX: make spotlight large */
-.lb-content{
-width: min(1200px, 95vw) !important;
-height: min(900px, 90vh) !important;
-display: grid !important;
-place-items: center !important;
-}
-#lbImg{
-width: min(900px, 90vw) !important;  /* <- change this (700–1100) */
-height: auto !important;
-max-width: none !important;
-max-height: 90vh !important;
-object-fit: contain !important;
-transform: none !important;
-image-rendering: pixelated !important;
-image-rendering: crisp-edges !important;
+
+#lbImg {
+  width: min(900px, 90vw) !important;
+  height: auto !important;
+  max-width: none !important;
+  max-height: 90vh !important;
+  object-fit: contain !important;
+  transform: none !important;
+  image-rendering: pixelated !important;
+  image-rendering: crisp-edges !important;
 }
 
 /* =========================================
-   6. PROJECT DETAIL PAGES (General)
+   6. PROJECT DETAIL PAGES
    ========================================= */
-.project-page { padding: 0; margin: 0; }
-.project-nav { padding: 30px 4vw; position: absolute; top: 0; z-index: 100; }
-.project-nav a { text-decoration: none; color: #000; background: rgba(255,255,255,0.8); padding: 10px 20px; border-radius: 40px; font-size: 14px; backdrop-filter: blur(10px); border: 1px solid rgba(0,0,0,0.1); }
+.project-page {
+  padding: 0;
+  margin: 0;
+}
 
-.project-hero { width: 100%; height: 80vh; background-color: #f2f2f2; }
-.project-hero img { width: 100%; height: 100%; object-fit: cover; }
+.project-nav {
+  padding: 30px 4vw;
+  position: absolute;
+  top: 0;
+  z-index: 100;
+}
 
-.project-intro { padding: 100px 4vw; display: grid; grid-template-columns: 1.5fr 1fr; gap: 60px; }
-.intro-text h1 { font-size: clamp(40px, 6vw, 72px); line-height: 1.1; margin-bottom: 30px; }
+.project-nav a {
+  text-decoration: none;
+  color: #000;
+  background: rgba(255,255,255,0.8);
+  padding: 10px 20px;
+  border-radius: 40px;
+  font-size: 14px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+.project-hero {
+  width: 100%;
+  height: 80vh;
+  background-color: #f2f2f2;
+}
+
+.project-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-intro {
+  padding: 100px 4vw;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 60px;
+}
+
+.intro-text h1 {
+  font-size: clamp(40px, 6vw, 72px);
+  line-height: 1.1;
+  margin-bottom: 30px;
+}
 
 /* =========================================
    7. REVEAL & RESPONSIVE
    ========================================= */
-.reveal { opacity: 0; transform: translateY(20px); transition: opacity 1s ease, transform 1s ease; }
-.reveal.active { opacity: 1; transform: translateY(0); }
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 @media (max-width: 900px) {
-  .portfolio-grid, .footer, .pixel-grid, .project-intro { grid-template-columns: 1fr; }
-  .right-align { text-align: left; }
+  .portfolio-grid,
+  .footer,
+  .pixel-grid,
+  .project-intro {
+    grid-template-columns: 1fr;
+  }
+
+  .right-align {
+    text-align: left;
+  }
+
+  .project-intro {
+    padding: 60px 4vw;
+  }
 }
