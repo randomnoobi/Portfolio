@@ -1,5 +1,5 @@
 /**
- * 1. CLOCK & SCROLL REVEAL
+ * 1. CLOCK
  */
 function updateTime() {
     const timeDisplay = document.getElementById("current-time");
@@ -24,6 +24,9 @@ setInterval(updateTime, 1000);
 updateTime();
 
 
+/**
+ * 2. SCROLL REVEAL
+ */
 const scrollReveal = function () {
     const reveals = document.querySelectorAll(".reveal");
 
@@ -39,7 +42,7 @@ scrollReveal();
 
 
 /**
- * 2. VIDEO HOVER LOGIC
+ * 3. VIDEO HOVER LOGIC
  */
 const videoItems = document.querySelectorAll(".video-container");
 
@@ -57,3 +60,29 @@ videoItems.forEach(item => {
         video.currentTime = 0;
     });
 });
+
+
+/**
+ * 4. LEFT SCROLL PROGRESS BAR
+ */
+function updateScrollProgress() {
+    const progressBar = document.querySelector(".scroll-progress__bar");
+    const progressPercent = document.querySelector(".scroll-progress__percent");
+
+    if (!progressBar || !progressPercent) return;
+
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+    const progress = documentHeight > 0 ? scrollTop / documentHeight : 0;
+    const clampedProgress = Math.min(Math.max(progress, 0), 1);
+
+    progressBar.style.transform = `scaleY(${clampedProgress})`;
+
+    const percent = Math.round(clampedProgress * 100);
+    progressPercent.textContent = String(percent).padStart(2, "0");
+}
+
+window.addEventListener("scroll", updateScrollProgress);
+window.addEventListener("resize", updateScrollProgress);
+updateScrollProgress();
