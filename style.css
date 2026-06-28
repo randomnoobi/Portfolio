@@ -201,7 +201,7 @@ a {
   border-radius: 36px;
   background:
     linear-gradient(rgba(255,255,255,0.16), rgba(255,255,255,0.05)),
-    url("assets/project-1/HabitProject_SplashImage.avif");
+    url("assets/project-1/HabitProject_sceneExample1.jpg");
   background-size: cover;
   background-position: center;
   box-shadow: 0 40px 100px rgba(0, 0, 0, 0.16);
@@ -390,8 +390,8 @@ a {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(0,0,0,0.78), rgba(0,0,0,0.35)),
-    url("assets/project-1/HabitProject_sceneExample2.jpg");
+    linear-gradient(90deg, rgba(0,0,0,0.72), rgba(0,0,0,0.38)),
+    url("assets/project-1/HabitProject_SplashImage.avif");
   background-size: cover;
   background-position: center;
   transform: scale(1.03);
