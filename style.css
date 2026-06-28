@@ -15,7 +15,6 @@ body {
   font-family: 'Inter', sans-serif;
   background-color: #ffffff;
   color: #000000;
-  padding: 2vw;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
@@ -32,6 +31,10 @@ a {
 /* =========================================
    2. HOMEPAGE PROJECT GRID
    ========================================= */
+body:not(.project-page) {
+  padding: 2vw;
+}
+
 .portfolio-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -136,12 +139,10 @@ a {
 }
 
 /* =========================================
-   4. PROJECT CASE STUDY BASE
+   4. CASE STUDY BASE
    ========================================= */
 .project-page {
-  padding: 0;
-  margin: 0;
-  background: #ffffff;
+  background: #f7f4ed;
   color: #111111;
 }
 
@@ -282,10 +283,13 @@ a {
 .case-section {
   padding: 120px 24px;
   background: #ffffff;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 24px;
 }
 
 .case-section--muted {
-  background: #f7f7f4;
+  background: #f7f4ed;
 }
 
 .case-section__label {
@@ -299,12 +303,6 @@ a {
 
 .case-section__body {
   grid-column: 5 / span 8;
-}
-
-.case-section {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  column-gap: 24px;
 }
 
 .case-section h2 {
@@ -339,7 +337,7 @@ a {
 }
 
 /* =========================================
-   8. SCENARIO GRID
+   8. SCENARIOS
    ========================================= */
 .scenario-grid {
   display: grid;
@@ -388,7 +386,7 @@ a {
 }
 
 /* =========================================
-   9. PIPELINE CARDS
+   9. PIPELINE
    ========================================= */
 .pipeline-list {
   display: grid;
@@ -600,23 +598,13 @@ a {
   border-radius: 6px;
 }
 
-.demo-live-iframe {
-  width: 100%;
-  height: 100%;
-  min-height: 420px;
-  border: none;
-}
-
-/* =========================================
-   13. PROJECT FOOTER
-   ========================================= */
 .case-footer {
   width: min(1280px, calc(100% - 48px));
   margin: 0 auto;
 }
 
 /* =========================================
-   14. REVEAL ANIMATION
+   13. REVEAL ANIMATION
    ========================================= */
 .reveal {
   opacity: 0;
@@ -630,7 +618,7 @@ a {
 }
 
 /* =========================================
-   15. RESPONSIVE
+   14. RESPONSIVE
    ========================================= */
 @media (max-width: 1100px) {
   .case-section {
@@ -659,12 +647,8 @@ a {
 }
 
 @media (max-width: 900px) {
-  body {
+  body:not(.project-page) {
     padding: 4vw;
-  }
-
-  .project-page {
-    padding: 0;
   }
 
   .portfolio-grid,
