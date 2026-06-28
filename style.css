@@ -386,21 +386,29 @@ a {
   overflow: hidden;
 }
 
+.product-main-band__bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.03);
+  z-index: 0;
+}
+
 .product-main-band__bg {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(90deg, rgba(0,0,0,0.72), rgba(0,0,0,0.38)),
-    url("assets/project-1/HabitProject_SplashImage.avif");
-  background-size: cover;
-  background-position: center;
-  transform: scale(1.03);
+  background: linear-gradient(90deg, rgba(0,0,0,0.72), rgba(0,0,0,0.38));
+  z-index: 1;
 }
 
 .product-main-band__scrim {
   position: absolute;
   inset: 0;
   background: radial-gradient(circle at 20% 30%, rgba(255,255,255,0.12), transparent 30%);
+  z-index: 1;
 }
 
 .product-main-band__content {
@@ -556,7 +564,33 @@ a {
 }
 
 /* =========================================
-   11. APP ALERTS TABLE
+   11. DIALOGUE FLOW
+   ========================================= */
+.dialogue-flow-section {
+  background: #ffffff;
+}
+
+.dialogue-flow-figure {
+  max-width: 1400px;
+  margin: 60px auto 0;
+  padding: 24px;
+  border-radius: 30px;
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 24px 70px rgba(0,0,0,0.06);
+  overflow-x: auto;
+}
+
+.dialogue-flow-figure img {
+  display: block;
+  width: 100%;
+  min-width: 900px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* =========================================
+   12. APP ALERTS TABLE
    ========================================= */
 .sheets-showcase {
   max-width: 1180px;
@@ -650,7 +684,7 @@ a {
 }
 
 /* =========================================
-   12. SITEMAP, DEMO, GALLERY
+   13. SITEMAP, DEMO, GALLERY
    ========================================= */
 .sitemap-figure {
   max-width: 1180px;
@@ -743,7 +777,7 @@ a {
 }
 
 /* =========================================
-   13. REVEAL ANIMATION
+   14. REVEAL ANIMATION
    ========================================= */
 .reveal {
   opacity: 0;
@@ -757,7 +791,7 @@ a {
 }
 
 /* =========================================
-   14. RESPONSIVE
+   15. RESPONSIVE
    ========================================= */
 @media (max-width: 1100px) {
   .project-detail-hero::after,
@@ -854,6 +888,15 @@ a {
     font-size: 18px;
   }
 
+  .dialogue-flow-figure {
+    padding: 14px;
+    border-radius: 22px;
+  }
+
+  .dialogue-flow-figure img {
+    min-width: 760px;
+  }
+
   .footer h1 {
     font-size: 38px;
   }
@@ -877,6 +920,10 @@ a {
 
   .scene-block__media img {
     height: 260px;
+  }
+
+  .dialogue-flow-figure img {
+    min-width: 680px;
   }
 
   .footer {
