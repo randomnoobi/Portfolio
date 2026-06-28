@@ -546,7 +546,36 @@ body:not(.project-page) {
 }
 
 /* =========================================
-   12. INTERACTION TABLE
+   12. INTERACTION SECTION SIDE IMAGE
+   ========================================= */
+.case-section--interaction {
+  align-items: start;
+}
+
+.case-section__side-visual {
+  grid-column: 1 / span 3;
+  margin-top: 56px;
+  align-self: start;
+}
+
+.case-section__side-visual img {
+  display: block;
+  width: 100%;
+  border-radius: 22px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: #ffffff;
+}
+
+.case-section__side-visual figcaption {
+  margin-top: 12px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #777777;
+  max-width: 280px;
+}
+
+/* =========================================
+   13. INTERACTION TABLE
    ========================================= */
 .interaction-table-wrap {
   margin-top: 52px;
@@ -602,7 +631,7 @@ body:not(.project-page) {
 }
 
 /* =========================================
-   13. SITEMAP + DEMO
+   14. SITEMAP + DEMO
    ========================================= */
 .sitemap-figure {
   margin-top: 48px;
@@ -656,7 +685,7 @@ body:not(.project-page) {
 }
 
 /* =========================================
-   14. REVEAL ANIMATION
+   15. REVEAL ANIMATION
    ========================================= */
 .reveal {
   opacity: 0;
@@ -670,7 +699,7 @@ body:not(.project-page) {
 }
 
 /* =========================================
-   15. RESPONSIVE
+   16. RESPONSIVE
    ========================================= */
 @media (max-width: 1100px) {
   .case-section {
@@ -680,6 +709,11 @@ body:not(.project-page) {
 
   .case-section__label {
     margin-bottom: 28px;
+  }
+
+  .case-section__side-visual {
+    margin: 0 0 32px 0;
+    max-width: 380px;
   }
 
   .case-meta,
@@ -776,6 +810,10 @@ body:not(.project-page) {
 
   .dialogue-flow-figure img {
     min-width: 760px;
+  }
+
+  .case-section__side-visual {
+    max-width: 100%;
   }
 
   .right-align {
