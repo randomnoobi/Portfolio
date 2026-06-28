@@ -503,29 +503,8 @@ body:not(.project-page) {
 /* =========================================
    11. DIALOGUE FLOW
    ========================================= */
-.dialogue-block {
-  margin-top: 80px;
-  padding-top: 80px;
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
-}
-
-.dialogue-block__copy {
-  max-width: 900px;
-}
-
-.dialogue-block__copy h3 {
-  font-family: 'DM Sans', 'Inter', sans-serif;
-  font-size: clamp(38px, 5vw, 72px);
-  line-height: 0.96;
-  letter-spacing: -0.06em;
-  margin-bottom: 22px;
-}
-
-.dialogue-block__copy p:last-child {
-  max-width: 760px;
-  font-size: 18px;
-  line-height: 1.65;
-  color: #444444;
+.case-section--dialogue {
+  align-items: start;
 }
 
 .dialogue-flow-figure {
@@ -546,16 +525,14 @@ body:not(.project-page) {
 }
 
 /* =========================================
-   12. INTERACTION SECTION SIDE IMAGE
+   12. SIDE VISUALS
    ========================================= */
-.case-section--interaction {
-  align-items: start;
-}
-
 .case-section__side-visual {
   grid-column: 1 / span 3;
   margin-top: 56px;
   align-self: start;
+  position: sticky;
+  top: 120px;
 }
 
 .case-section__side-visual img {
@@ -577,6 +554,10 @@ body:not(.project-page) {
 /* =========================================
    13. INTERACTION TABLE
    ========================================= */
+.case-section--interaction {
+  align-items: start;
+}
+
 .interaction-table-wrap {
   margin-top: 52px;
   overflow-x: auto;
@@ -712,6 +693,7 @@ body:not(.project-page) {
   }
 
   .case-section__side-visual {
+    position: static;
     margin: 0 0 32px 0;
     max-width: 380px;
   }
@@ -833,8 +815,7 @@ body:not(.project-page) {
   .case-hero__lead,
   .case-section__intro,
   .case-copy-grid p,
-  .pipeline-card p,
-  .dialogue-block__copy p:last-child {
+  .pipeline-card p {
     font-size: 16px;
   }
 
