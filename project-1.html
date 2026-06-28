@@ -12,405 +12,343 @@
 
 <body class="project-page">
 
-    <nav class="project-nav">
-        <a href="index.html">← Back to Projects</a>
-    </nav>
+    <header class="case-nav">
+        <a href="index.html" class="case-nav__back">← Projects</a>
 
-    <!-- HERO -->
-    <section id="hero" class="hero hero--product project-detail-hero">
-        <div class="hero-product-inner reveal">
-            <p class="hero-eyebrow">Desk intelligence · Chat-first</p>
-            <h1 class="hero-title hero-title--product">
-                Your desk,<br>
-                <span class="hero-accent">understood.</span>
-            </h1>
-            <p class="hero-lead">
-                One camera. One calm interface. Desk Talk watches your workspace and turns what it sees into small, timely reminders — so spills, clutter, and lost items never sneak up on you.
-            </p>
-            <div class="hero-cta-row">
-                <a href="#how-it-works" class="btn-primary">How it works</a>
-            </div>
-        </div>
-    </section>
+        <nav class="case-nav__links" aria-label="Project sections">
+            <a href="#overview">Overview</a>
+            <a href="#technical-pipeline">Pipeline</a>
+            <a href="#dialogue-flow">Dialogue</a>
+            <a href="#demo">Demo</a>
+        </nav>
+    </header>
 
-    <!-- PROJECT INTRO -->
-    <section class="project-intro reveal">
-        <div class="intro-text">
+    <main class="case-page">
+
+        <!-- HERO -->
+        <section class="case-hero reveal">
+            <p class="case-eyebrow">AI desk companion · Computer vision · 2026</p>
+
             <h1>Desk Talk</h1>
-            <p class="description">
-                Desk Talk is a student project that uses computer vision and a chat-style interface to make your desk feel more organized, aware, and helpful.
-                It notices everyday desk situations like spills, clutter, missing items, posture, and focus distractions, then turns them into calm reminders.
+
+            <p class="case-hero__lead">
+                A camera-based desk assistant that turns everyday objects into quiet, useful reminders — helping users notice spills, clutter, misplaced items, and small habits before they become distractions.
             </p>
-        </div>
 
-        <div class="intro-meta">
-            <div class="meta-item">
-                <h3>Role</h3>
-                <p>Designer / Developer</p>
-            </div>
+            <div class="case-meta">
+                <div>
+                    <span>Role</span>
+                    <p>Designer / Developer</p>
+                </div>
 
-            <div class="meta-item">
-                <h3>Year</h3>
-                <p>2026</p>
-            </div>
+                <div>
+                    <span>Stack</span>
+                    <p>Python · OpenCV · YOLO · Flask · Local LLM · Web</p>
+                </div>
 
-            <div class="meta-item">
-                <h3>Stack</h3>
-                <p>Python · OpenCV · YOLO · Flask · Local LLM · Web</p>
-            </div>
-        </div>
-    </section>
+                <div>
+                    <span>Focus</span>
+                    <p>Object agents · Dialogue system · Desk monitoring</p>
+                </div>
 
-    <!-- MAIN FUNCTION -->
-    <section id="product" class="ref-section section-tight product-main-section reveal">
-        <div class="product-main-band">
-
-            <!-- Splash image background -->
-            <img
-                class="product-main-band__bg-img"
-                src="assets/project-1/HabitProject_SplashImage.avif"
-                alt=""
-                aria-hidden="true"
-            >
-
-            <!-- Dark overlay on top of the splash image -->
-            <div class="product-main-band__bg" aria-hidden="true"></div>
-            <div class="product-main-band__scrim" aria-hidden="true"></div>
-
-            <div class="product-main-band__content">
-                <p class="section-kicker">Main function</p>
-                <h2 class="ref-h2 ref-h2--product">Manage your desk in a simpler, smarter way.</h2>
-
-                <div class="product-main-band__lede">
-                    <p class="ref-prose ref-prose--large">
-                        Every day, we spend a lot of time around the desk. On the desk, we have computers, cups, keys, books, and daily objects. But these objects are not being actively maintained or kept organized, which can lead to chaos like lost keys and water spills.
-                    </p>
-
-                    <p class="ref-prose ref-prose--large">
-                        Desk Talk uses a camera and a chat-style interface to track what is on your desk and turn everyday objects into gentle reminders that keep you organized and focused. It can warn you about spills or clutter, remind you to take breaks, and help you find misplaced items.
-                    </p>
+                <div>
+                    <span>Year</span>
+                    <p>2026</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- THREE SCENARIOS -->
-    <section id="scenarios" class="ref-section reveal">
-        <div class="ref-measure ref-measure--wide">
-            <p class="section-kicker">Three scenes</p>
-            <h2 class="ref-h2 ref-h2--product">What Desk Talk watches for</h2>
-            <p class="ref-prose">
-                Each scene matches a real desk moment. The product focuses on simple, useful situations: risks near your computer, lost objects, and habits that build up over time.
-            </p>
-        </div>
-
-        <div class="scene-stack">
-
-            <article class="scene-block reveal">
-                <div class="scene-block__media">
-                    <img src="assets/project-1/HabitProject_sceneExample1.jpg" alt="Scene 1: spills, snacks, pet near laptop" loading="lazy" decoding="async">
-                </div>
-
-                <div class="scene-block__copy">
-                    <span class="scene-num">01</span>
-                    <h3 class="scene-title">Hazards near your computer</h3>
-                    <p class="scene-body">
-                        Water or risky items too close to the machine, pets on the desk, or clutter crowding your screen zone — you get a clear heads-up before damage or distraction happens.
-                    </p>
-                </div>
-            </article>
-
-            <article class="scene-block scene-block--reverse reveal">
-                <div class="scene-block__media">
-                    <img src="assets/project-1/HabitProject_sceneExample2.jpg" alt="Scene 2: headphones, phone, and keys on desk" loading="lazy" decoding="async">
-                </div>
-
-                <div class="scene-block__copy">
-                    <span class="scene-num">02</span>
-                    <h3 class="scene-title">Your things, accounted for</h3>
-                    <p class="scene-body">
-                        Headphones, phone, keys, and other small items appear on your desk — Desk Talk helps you notice what is present, what moved, and what might be missing.
-                    </p>
-                </div>
-            </article>
-
-            <article class="scene-block reveal">
-                <div class="scene-block__media">
-                    <img src="assets/project-1/HabitProject_sceneExample3.jpg" alt="Scene 3: posture, distance, hydration, plants" loading="lazy" decoding="async">
-                </div>
-
-                <div class="scene-block__copy">
-                    <span class="scene-num">03</span>
-                    <h3 class="scene-title">Habits that add up</h3>
-                    <p class="scene-body">
-                        Posture checks, sitting too close to the screen, drinking water, and watering plants — light nudges tied to how you actually use your desk.
-                    </p>
-                </div>
-            </article>
-
-        </div>
-    </section>
-
-    <!-- TECHNICAL PIPELINE -->
-    <section id="how-it-works" class="ref-section section-alt flows-section reveal">
-        <div class="ref-measure ref-measure--wide">
-            <p class="section-kicker">Technical pipeline</p>
-            <h2 class="ref-h2 ref-h2--product">How it works</h2>
-            <p class="ref-prose">
-                Three pipelines run behind the chat: one watches for physical risk, one keeps a light memory of where your things were, and one turns habits into useful reminders.
-            </p>
-        </div>
-
-        <div class="flow-cards">
-
-            <article class="flow-card reveal">
-                <figure class="flow-card__figure">
-                    <img src="assets/project-1/HabitProject_function1Flow.png" alt="Flowchart: risk and proximity pipeline" loading="lazy" decoding="async">
-                    <figcaption class="flow-card__caption">
-                        <span class="flow-card__label">Risk &amp; proximity</span>
-                        <span class="flow-card__text">
-                            The desk camera watches object placement, checks whether anything is too close or drifting toward an edge, then sends a message only when there is something the user can fix.
-                        </span>
-                    </figcaption>
-                </figure>
-            </article>
-
-            <article class="flow-card reveal">
-                <figure class="flow-card__figure">
-                    <img src="assets/project-1/HabitProject_function2Flow.png" alt="Flowchart: lost items and last seen pipeline" loading="lazy" decoding="async">
-                    <figcaption class="flow-card__caption">
-                        <span class="flow-card__label">Lost items &amp; last seen</span>
-                        <span class="flow-card__text">
-                            The camera checks whether the desk scene changed, updates a last-seen record, and uses vision fallback when an item is hard to identify.
-                        </span>
-                    </figcaption>
-                </figure>
-            </article>
-
-            <article class="flow-card reveal">
-                <figure class="flow-card__figure">
-                    <img src="assets/project-1/HabitProject_function3Flow.png" alt="Flowchart: habit and reminder pipeline" loading="lazy" decoding="async">
-                    <figcaption class="flow-card__caption">
-                        <span class="flow-card__label">Habits &amp; gentle nudges</span>
-                        <span class="flow-card__text">
-                            The live desk feed detects habit cues, checks cooldown settings, then waits or sends a short reminder when it is actually useful.
-                        </span>
-                    </figcaption>
-                </figure>
-            </article>
-
-        </div>
-    </section>
-
-    <!-- DIALOGUE FLOW -->
-    <section id="dialogue-flow" class="ref-section dialogue-flow-section reveal">
-        <div class="ref-measure ref-measure--wide">
-            <p class="section-kicker">Technical pipeline</p>
-            <h2 class="ref-h2 ref-h2--product">How the dialogue works</h2>
-            <p class="ref-prose">
-                The dialogue system connects user messages, object-specific characters, memory, idle conversations, and danger detection. This lets Desk Talk respond like a small group of desk agents instead of a normal notification system.
-            </p>
-        </div>
-
-        <figure class="dialogue-flow-figure reveal">
-            <img
-                src="assets/project-1/dialogueFlow.png"
-                alt="Dialogue flow diagram showing user input, object chat, memory, idle timer, danger detection, and LLM message generation"
-                loading="lazy"
-                decoding="async"
-            >
+        <!-- SPLASH IMAGE -->
+        <figure class="case-cover reveal">
+            <img src="assets/project-1/HabitProject_SplashImage.avif" alt="Desk Talk splash image showing a user working at a desk">
+            <figcaption>
+                Desk Talk observes the workspace and turns object behavior into calm, chat-style feedback.
+            </figcaption>
         </figure>
-    </section>
 
-    <!-- WHAT SHOWS UP -->
-    <section id="alerts" class="ref-section reveal">
-        <div class="ref-measure ref-measure--wide">
-            <p class="section-kicker">Interaction</p>
-            <h2 class="ref-h2 ref-h2--product">What shows up in the app</h2>
-            <p class="ref-prose">
-                Alerts read like messages from your desk — short, specific, and easy to act on.
-            </p>
-        </div>
+        <!-- OVERVIEW -->
+        <section id="overview" class="case-section reveal">
+            <div class="case-section__label">01 Overview</div>
 
-        <div class="sheets-showcase">
-            <p class="sheets-showcase__hint">Spreadsheet-style layout — scroll sideways on small screens.</p>
+            <div class="case-section__body">
+                <h2>Managing the desk through small, intelligent signals.</h2>
 
-            <div class="sheets-grid-wrap">
-                <table class="sheets-showcase-grid">
-                    <thead>
-                        <tr>
-                            <th scope="col">Risk detection</th>
-                            <th scope="col">Lost objects</th>
-                            <th scope="col">Reminders &amp; habits</th>
-                        </tr>
-                    </thead>
+                <div class="case-copy-grid">
+                    <p>
+                        The desk is where many daily objects gather: laptops, cups, keys, phones, books, headphones, plants, and personal items. These objects often create small problems — a cup too close to the keyboard, a phone pulling attention away, or keys disappearing under clutter.
+                    </p>
 
-                    <tbody>
-                        <tr>
-                            <td>
-                                <ul class="sheets-cell-list">
-                                    <li><strong>Cat too close to your laptop</strong> — pet in the spill zone near liquids and your screen.</li>
-                                    <li><strong>Cup near keyboard</strong> — drink geometry flagged before it becomes a spill.</li>
-                                </ul>
-                            </td>
-
-                            <td>
-                                <ul class="sheets-cell-list">
-                                    <li><strong>“Anyone seen my keys?”</strong> — last-seen style answer from the desk log and vision.</li>
-                                    <li><strong>AirPods / wallet / phone</strong> — tracked items with timestamps when the scene changes.</li>
-                                </ul>
-                            </td>
-
-                            <td>
-                                <ul class="sheets-cell-list">
-                                    <li><strong>Phone beside your keyboard</strong> — gentle focus nudge after it sits there for a while.</li>
-                                    <li><strong>Break logged</strong> — stepping away for several minutes counts as a real break.</li>
-                                </ul>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <ul class="sheets-cell-list">
-                                    <li><strong>Snack or paper too close</strong> — crumbs, grease, or knock-over risk called out.</li>
-                                    <li><strong>Desk edge drift</strong> — something sliding toward the edge of the frame.</li>
-                                </ul>
-                            </td>
-
-                            <td>
-                                <ul class="sheets-cell-list">
-                                    <li><strong>Desk captures gallery</strong> — timestamped stills when important objects appear.</li>
-                                    <li><strong>Scene heartbeat</strong> — quiet rescans when the desk looks static for a long stretch.</li>
-                                </ul>
-                            </td>
-
-                            <td>
-                                <ul class="sheets-cell-list">
-                                    <li><strong>Posture / too close</strong> — vision-assisted cues from the webcam.</li>
-                                    <li><strong>Nail biting &amp; hand-to-mouth</strong> — optional habit counts in your wellness strip.</li>
-                                </ul>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <ul class="sheets-cell-list">
-                                    <li><strong>Crowded desk cluster</strong> — too many objects in frame; tidy-up suggestion.</li>
-                                    <li><strong>Chain-style hazards</strong> — relationships between risky object placements.</li>
-                                </ul>
-                            </td>
-
-                            <td>
-                                <ul class="sheets-cell-list">
-                                    <li><strong>Natural-language lookup</strong> — ask where something is in plain English.</li>
-                                    <li><strong>YOLO + vision fallback</strong> — detectors plus a second pass when labels are unclear.</li>
-                                </ul>
-                            </td>
-
-                            <td>
-                                <ul class="sheets-cell-list">
-                                    <li><strong>Hydration &amp; sips</strong> — cup leaves and returns.</li>
-                                    <li><strong>Water plants</strong> — gentle recurring reminder from the scenario list.</li>
-                                </ul>
-                            </td>
-                        </tr>
-
-                        <tr class="sheets-showcase-grid__summary">
-                            <td colspan="3">
-                                <p class="sheets-summary-lead">After a focused block you might see compact recap chips:</p>
-                                <ul class="stat-pills stat-pills--tight" aria-label="Example session stats">
-                                    <li><strong>3</strong> posture nudges</li>
-                                    <li><strong>2</strong> “too close” prompts</li>
-                                    <li><strong>1</strong> hydration reminder</li>
-                                    <li><strong>0</strong> spill risks</li>
-                                </ul>
-                            </td>
-                        </tr>
-                    </tbody>
-
-                </table>
-            </div>
-        </div>
-    </section>
-
-    <!-- WHY -->
-    <section id="why" class="ref-section reveal">
-        <div class="ref-measure ref-measure--wide">
-            <p class="section-kicker">Why it matters</p>
-            <h2 class="ref-h2 ref-h2--product">More than notifications.</h2>
-
-            <p class="ref-prose ref-prose--large">
-                Most tools shout at you. Desk Talk is built around the idea that your desk already tells a story — objects, distance, light habits. When that story is translated into a calm chat, you get fewer surprises, less damage, and a workspace that feels intentional instead of chaotic.
-            </p>
-
-            <p class="ref-prose">
-                Under the hood: computer vision for what is on the desk, lightweight rules for risk and presence, and a conversational layer so every alert feels human-sized — not a dashboard, not a siren.
-            </p>
-        </div>
-    </section>
-
-    <!-- APP SITEMAP -->
-    <section id="sitemap" class="ref-section section-alt sitemap-section reveal">
-        <div class="ref-measure ref-measure--wide">
-            <p class="section-kicker">Product map</p>
-            <h2 class="ref-h2 ref-h2--product">How the app connects.</h2>
-
-            <p class="ref-prose">
-                The sitemap shows the main user paths: starting from the home screen, moving into live camera evidence, object chats, settings, habits, captures, and individual character conversations.
-            </p>
-        </div>
-
-        <figure class="sitemap-figure">
-            <img src="assets/project-1/HabitProject_Sitemap.png" alt="Sitemap showing Desk Talk app screens and navigation paths" loading="lazy" decoding="async">
-        </figure>
-    </section>
-
-    <!-- LIVE DEMO -->
-    <section id="demo" class="ref-section section-alt pre-footer-product reveal">
-        <div class="ref-measure ref-measure--wide">
-            <p class="section-kicker">Try it</p>
-            <h2 class="ref-h2 ref-h2--product">Live demo</h2>
-
-            <p class="ref-prose">
-                This slot is reserved for a live instance of Desk Talk. When you deploy, point the frame at your app URL so visitors can open chat, the camera view, or a read-only live feed.
-            </p>
-        </div>
-
-        <div class="ref-measure ref-measure--wide demo-live-wrap">
-            <div class="demo-live-slot" role="region" aria-label="Live demo embed area">
-                <div class="demo-live-slot__inner">
-                    <p class="demo-live-slot__title">Demo embed</p>
-                    <p class="demo-live-slot__hint">
-                        Add an <code class="demo-live-code">&lt;iframe&gt;</code> here when your project is hosted.
+                    <p>
+                        Desk Talk treats the desk as a living system. It uses computer vision to understand what is on the desk, then turns object states into short messages, reminders, and agent-like dialogue. The goal is not to overwhelm the user, but to make the desk feel more aware and easier to manage.
                     </p>
                 </div>
-
-                <!-- Example:
-                <iframe class="demo-live-iframe" title="Desk Talk live demo" src="https://your-desk-talk-host/" loading="lazy" allow="camera; microphone"></iframe>
-                -->
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- GALLERY -->
-    <section id="gallery" class="ref-section pre-footer-product pre-footer-product--tight reveal">
-        <div class="ref-measure ref-measure--wide">
-            <p class="section-kicker">Look closer</p>
-            <h2 class="ref-h2 ref-h2--product">Product gallery</h2>
-            <p class="ref-prose">
-                Screenshots and extra visuals will go here later. For now this section is intentionally empty.
-            </p>
-        </div>
+        <!-- SCENARIOS -->
+        <section id="scenarios" class="case-section case-section--muted reveal">
+            <div class="case-section__label">02 Scenarios</div>
 
-        <div class="product-bottom-carousel-wrap">
-            <div class="gallery-empty" role="region" aria-label="Product gallery empty">
-                <p class="gallery-empty__text">No gallery items yet.</p>
+            <div class="case-section__body">
+                <h2>Three moments the system watches for.</h2>
+
+                <p class="case-section__intro">
+                    Each scenario is based on a common desk problem: physical risk, missing objects, and repeated habits.
+                </p>
+
+                <div class="scenario-grid">
+                    <article class="scenario-card reveal">
+                        <img src="assets/project-1/HabitProject_sceneExample1.jpg" alt="Scene 1: spills, snacks, pet near laptop" loading="lazy" decoding="async">
+                        <div>
+                            <span>01</span>
+                            <h3>Hazards near your computer</h3>
+                            <p>
+                                Drinks, food, pets, or unstable objects near a laptop can trigger a clear message before something gets damaged.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="scenario-card reveal">
+                        <img src="assets/project-1/HabitProject_sceneExample2.jpg" alt="Scene 2: headphones, phone, and keys on desk" loading="lazy" decoding="async">
+                        <div>
+                            <span>02</span>
+                            <h3>Your things, accounted for</h3>
+                            <p>
+                                Keys, headphones, phones, and other small objects can be tracked through last-seen memory and object recognition.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="scenario-card reveal">
+                        <img src="assets/project-1/HabitProject_sceneExample3.jpg" alt="Scene 3: posture, distance, hydration, plants" loading="lazy" decoding="async">
+                        <div>
+                            <span>03</span>
+                            <h3>Habits that add up</h3>
+                            <p>
+                                The system notices posture, screen distance, hydration, phone distraction, and other repeated patterns.
+                            </p>
+                        </div>
+                    </article>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- TECHNICAL PIPELINE -->
+        <section id="technical-pipeline" class="case-section reveal">
+            <div class="case-section__label">03 Technical Pipeline</div>
+
+            <div class="case-section__body">
+                <h2>Three systems behind the chat interface.</h2>
+
+                <p class="case-section__intro">
+                    Desk Talk is organized around three pipelines: risk detection, object memory, and habit reminders. Each pipeline converts visual input into a message the user can actually act on.
+                </p>
+
+                <div class="pipeline-list">
+                    <article class="pipeline-card reveal">
+                        <figure>
+                            <img src="assets/project-1/HabitProject_function1Flow.png" alt="Risk and proximity pipeline diagram" loading="lazy" decoding="async">
+                        </figure>
+
+                        <div>
+                            <span>Pipeline 01</span>
+                            <h3>Risk &amp; proximity</h3>
+                            <p>
+                                The camera checks whether objects are too close to dangerous zones, such as liquids near electronics or items drifting toward the edge of the desk.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="pipeline-card reveal">
+                        <figure>
+                            <img src="assets/project-1/HabitProject_function2Flow.png" alt="Lost item and last-seen pipeline diagram" loading="lazy" decoding="async">
+                        </figure>
+
+                        <div>
+                            <span>Pipeline 02</span>
+                            <h3>Lost items &amp; last seen</h3>
+                            <p>
+                                The system updates a lightweight memory of where objects appeared, then lets the user ask natural questions like where an item was last seen.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="pipeline-card reveal">
+                        <figure>
+                            <img src="assets/project-1/HabitProject_function3Flow.png" alt="Habit and reminder pipeline diagram" loading="lazy" decoding="async">
+                        </figure>
+
+                        <div>
+                            <span>Pipeline 03</span>
+                            <h3>Habits &amp; gentle nudges</h3>
+                            <p>
+                                Habit cues are filtered through cooldowns and context so reminders feel timely instead of repetitive.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- DIALOGUE FLOW -->
+                <div id="dialogue-flow" class="dialogue-block reveal">
+                    <div class="dialogue-block__copy">
+                        <p class="case-eyebrow">Technical Pipeline</p>
+                        <h3>How the dialogue works</h3>
+                        <p>
+                            The dialogue system connects user input, idle object conversations, selected speakers, memory updates, danger detection, and character-specific LLM responses. This makes Desk Talk feel like a small group of desk agents rather than a basic alert system.
+                        </p>
+                    </div>
+
+                    <figure class="dialogue-flow-figure">
+                        <img src="assets/project-1/dialogueFlow.png" alt="Dialogue flow diagram showing user input, object chat, memory, idle timer, danger detection, and LLM message generation" loading="lazy" decoding="async">
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- INTERACTION -->
+        <section id="interaction" class="case-section case-section--muted reveal">
+            <div class="case-section__label">04 Interaction</div>
+
+            <div class="case-section__body">
+                <h2>What appears in the app.</h2>
+
+                <p class="case-section__intro">
+                    Alerts are designed to be short, specific, and easy to act on.
+                </p>
+
+                <div class="interaction-table-wrap">
+                    <table class="interaction-table">
+                        <thead>
+                            <tr>
+                                <th>Risk detection</th>
+                                <th>Lost objects</th>
+                                <th>Reminders &amp; habits</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <strong>Cup near keyboard</strong>
+                                    <span>Drink geometry is flagged before it becomes a spill.</span>
+                                </td>
+
+                                <td>
+                                    <strong>“Anyone seen my keys?”</strong>
+                                    <span>Last-seen answer from the desk log and camera state.</span>
+                                </td>
+
+                                <td>
+                                    <strong>Phone beside keyboard</strong>
+                                    <span>A focus nudge appears after the phone stays there too long.</span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <strong>Desk edge drift</strong>
+                                    <span>An object moving toward the edge can trigger a warning.</span>
+                                </td>
+
+                                <td>
+                                    <strong>AirPods / wallet / phone</strong>
+                                    <span>Small objects are tracked when the scene changes.</span>
+                                </td>
+
+                                <td>
+                                    <strong>Posture / screen distance</strong>
+                                    <span>Vision-assisted cues help identify repeated habits.</span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <strong>Crowded desk cluster</strong>
+                                    <span>The system can suggest tidying when the desk becomes visually overloaded.</span>
+                                </td>
+
+                                <td>
+                                    <strong>Natural-language lookup</strong>
+                                    <span>Users can ask where something is instead of checking manually.</span>
+                                </td>
+
+                                <td>
+                                    <strong>Hydration &amp; plants</strong>
+                                    <span>Recurring reminders can be tied to visible desk objects.</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY -->
+        <section id="why" class="case-section reveal">
+            <div class="case-section__label">05 Why it matters</div>
+
+            <div class="case-section__body">
+                <h2>More than notifications.</h2>
+
+                <div class="case-copy-grid">
+                    <p>
+                        Most reminder tools interrupt the user from outside the task. Desk Talk starts from the physical environment itself. The desk already contains signals: object distance, object presence, clutter, and routines.
+                    </p>
+
+                    <p>
+                        By translating those signals into calm conversation, the system makes reminders feel more contextual and less generic. It becomes a workspace layer that is simple on the surface but technically aware underneath.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SITEMAP -->
+        <section id="sitemap" class="case-section case-section--muted reveal">
+            <div class="case-section__label">06 Product map</div>
+
+            <div class="case-section__body">
+                <h2>How the app connects.</h2>
+
+                <p class="case-section__intro">
+                    The sitemap shows the main paths through the app: live camera evidence, object chats, settings, habits, captures, and individual character conversations.
+                </p>
+
+                <figure class="sitemap-figure">
+                    <img src="assets/project-1/HabitProject_Sitemap.png" alt="Sitemap showing Desk Talk app screens and navigation paths" loading="lazy" decoding="async">
+                </figure>
+            </div>
+        </section>
+
+        <!-- DEMO -->
+        <section id="demo" class="case-section reveal">
+            <div class="case-section__label">07 Live demo</div>
+
+            <div class="case-section__body">
+                <h2>Try it later.</h2>
+
+                <p class="case-section__intro">
+                    This area is reserved for a live instance of Desk Talk. When the project is deployed, an embedded web client or read-only live feed can be placed here.
+                </p>
+
+                <div class="demo-slot">
+                    <div>
+                        <p class="demo-slot__title">Demo embed</p>
+                        <p class="demo-slot__hint">
+                            Add an <code>&lt;iframe&gt;</code> here when the hosted app is ready.
+                        </p>
+                    </div>
+
+                    <!-- Example:
+                    <iframe class="demo-live-iframe" title="Desk Talk live demo" src="https://your-desk-talk-host/" loading="lazy" allow="camera; microphone"></iframe>
+                    -->
+                </div>
+            </div>
+        </section>
+
+    </main>
 
     <!-- FOOTER -->
-    <footer class="footer">
+    <footer class="footer case-footer">
         <div class="footer-column">
             <h1>Sam Wang</h1>
             <p>Creative focused on clarity, strategic storytelling, and intentional collaboration.</p>
